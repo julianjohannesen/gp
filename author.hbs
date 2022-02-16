@@ -1,0 +1,75 @@
+{{!< default}}
+
+{{#contentFor 'title'}}{{ meta_title }}{{/contentFor}}
+
+<div class='o-grid'>
+  <div class='o-grid__col o-grid__col--center o-grid__col--9-10-m o-grid__col--2-3-l'>
+    {{#author}}
+      <div class='c-author'>
+        {{#if profile_image}}
+          <div class='c-author__media'>
+            <img class='c-author__image lazyload' data-src='{{ img_url profile_image size='profile-image-large' }}' alt='' width='80' height='80'>
+          </div>
+        {{/if}}
+
+        <div class='c-author__content'>
+          <h1 class='c-author__title'>{{ name }}</h1>
+          {{#if bio}}
+            <p class='c-author__bio'>{{ bio }}</p>
+          {{/if}}
+
+          <ul class='o-plain-list c-author__links'>
+            {{#if twitter}}
+              <li class='c-author__links-item'>
+                <a href='{{ twitter_url }}' aria-label='Twitter'>
+                  <span class='c-author__links-icon' data-icon='ei-sc-twitter' data-size='s'></span>
+                  <span class='u-hidden-visually'>Twitter</span>
+                </a>
+              </li>
+            {{/if}}
+
+            {{#if facebook}}
+              <li class='c-author__links-item'>
+                <a href='{{ facebook_url }}' aria-label='Facebook'>
+                  <span class='c-author__links-icon' data-icon='ei-sc-facebook' data-size='s'></span>
+                  <span class='u-hidden-visually'>Facebook</span>
+                </a>
+              </li>
+            {{/if}}
+
+            {{#if website}}
+              <li class='c-author__links-item'>
+                <a href='{{ website }}'>
+                  <span class='c-author__links-icon' data-icon='ei-link' data-size='s'></span>
+                  <span class='u-hidden-visually'>Website</span>
+                </a>
+              </li>
+            {{/if}}
+
+            {{#if location}}
+              <li class='c-author__links-item'>
+                <span class='c-author__links-icon' data-icon='ei-location' data-size='s'></span>
+                {{ location }}
+              </li>
+            {{/if}}
+
+            <li class='c-author__links-item'>
+              <span class='c-author__links-icon' data-icon='ei-chart' data-size='s'></span>
+              {{plural ../pagination.total empty='No Posts' singular='% Post' plural='% Posts'}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    {{/author}}
+  </div>
+</div>
+
+<div class='o-grid'>
+  <div class='o-grid__col o-grid__col--center o-grid__col--9-10-m o-grid__col--2-3-l'>
+    {{> loop }}
+  </div>
+</div>
+
+<div class='o-grid'>
+  {{ pagination }}
+</div>

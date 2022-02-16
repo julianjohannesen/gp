@@ -1,0 +1,112 @@
+{
+  "name": "ubud",
+  "description": "Premium Ghost CMS Theme",
+  "demo": "https://ubud.aspirethemes.com/",
+  "version": "1.0.5",
+  "engines": {
+    "ghost": ">=4.0.0",
+    "ghost-api": "v4"
+  },
+  "keywords": [
+    "ghost-theme"
+  ],
+  "scripts": {
+    "postinstall": "bower install"
+  },
+  "dependencies": {
+    "@primer/css": "^17.11.0",
+    "clipboard": "^2.0.8",
+    "concat": "^3.0.0",
+    "evil-icons": "^1.10.1",
+    "fs": "0.0.2",
+    "gulp-concat": "^2.6.0",
+    "lazysizes": "^5.3.2",
+    "normalize.css": "^8.0.1",
+    "prismjs": "^1.25.0",
+    "sass-mq": "^5.0.1",
+    "tocbot": "^4.17.0"
+  },
+  "devDependencies": {
+    "ansi-colors": "^1.1.0",
+    "beeper": "^1.1.1",
+    "dart-sass": "^1.25.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-jshint": "^2.1.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-replace": "^1.1.3",
+    "gulp-rtlcss": "^1.4.2",
+    "gulp-sass": "^5.0.0",
+    "gulp-size": "^4.0.1",
+    "gulp-uglify": "^3.0.2",
+    "gulp-zip": "^4.2.0",
+    "jshint": "^2.13.1",
+    "jshint-stylish": "^2.2.1",
+    "node-sass": "^6.0.1",
+    "run-sequence": "^2.2.1",
+    "sass": "^1.35.1"
+  },
+  "author": {
+    "name": "Aspire Themes",
+    "email": "ahmad@aspirethemes.com",
+    "url": "https://aspirethemes.com/"
+  },
+  "config": {
+    "custom": {
+      "show_table_of_contents_on_all_posts": {
+        "type": "boolean",
+        "default": false,
+        "group": "post"
+      },
+      "show_table_of_contents_on_all_pages": {
+        "type": "boolean",
+        "default": false,
+        "group": "post"
+      }
+    },
+    "posts_per_page": 5,
+    "image_sizes": {
+      "profile-image-small": {
+        "width": 128
+      },
+      "profile-image-large": {
+        "width": 320
+      },
+      "home-image-default": {
+        "width": 1080
+      },
+      "home-image-circle-small": {
+        "width": 192
+      },
+      "home-image-circle--medium": {
+        "width": 256
+      },
+      "home-image-circle--large": {
+        "width": 384
+      },
+      "home-image-circle--xlarge": {
+        "width": 512
+      },
+      "home-image-center": {
+        "width": 1462
+      },
+      "home-image-wide-small": {
+        "width": 536
+      },
+      "home-image-wide-medium": {
+        "width": 1120
+      },
+      "home-image-wide-large": {
+        "width": 2240
+      },
+      "feature-image": {
+        "width": 730
+      },
+      "feature-image-large": {
+        "width": 1460
+      }
+    }
+  }
+}

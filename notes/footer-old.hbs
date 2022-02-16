@@ -1,0 +1,72 @@
+<footer class='c-footer'>
+  <div class='o-grid'>
+
+    {{#if @site.secondary_navigation}}
+      <div class='o-grid__col--initial-grow o-grid__col--4-4-s'>
+        <ul class='c-footer-nav o-plain-list'>
+          {{ navigation type='secondary' }}
+        </ul>
+        <!--JJ added 12-15-21-->
+        {{!-- log in/out and account links --}}
+        <ul class='c-footer-nav o-plain-list'>
+        {{#if @member}}
+          <li class='c-nav__item is-membership'><a href='{{ @site.url }}/account/' class='c-nav__link js-nav__link-membership'>{{t 'Account' }}</a></li>
+          <li class='c-nav__item is-membership'><a href='#signout' class='c-nav__link' data-members-signout>{{t 'Log out' }}</a></li>
+        {{else}}
+          <li class='c-nav__item is-membership'><a href='{{ @site.url }}/signin/' class='c-nav__link js-nav__link-membership'>{{t 'Log in' }}</a></li>
+        {{/if}}
+        </ul>
+        {{!-- social icons --}}
+        <ul class='c-footer-nav o-plain-list'>
+        {{> social-icons }}
+        </ul>
+        <!-- /end of new content -->
+      </div>
+    {{/if}}
+
+    <div class='o-grid__col--initial-grow o-grid__col--4-4-s'>
+      <div class='c-footer-copy'>
+        &copy; {{ date format='YYYY' }} {{ @site.title }}
+        {{!-- JJ removed 12-19-21
+          {
+            t 'Published with {ghostLink} & {themeLink}' 
+            ghostLink='<a href=\'https://ghost.org\'>Ghost</a>' 
+            themeLink='<a href=\'https://aspirethemes.com/themes/ubud\'>Ubud</a>' 
+          }
+        --}}
+      </div>
+    </div>
+
+  </div>
+  {{!-- JJ added 12-19-21 --}}
+  <div class="scrollToTop">
+    <button class="" aria-label="Scroll to Top">↑</button>
+  </div>
+  <script>
+    var scrollToTopBtn = document.querySelector(".scrollToTop button");
+    var rootElement = document.documentElement;
+
+    function handleScroll() {
+      // Get total scrollable height. scrollHeights give height including
+      // hidden content, and clientHeight gives without hidden content
+      var scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
+      // scrollTop gets height between top of doc and top of content, thus
+      // the height that's been scrolled. Now divide that by total scrollable
+      // height to get a ratio 0-1 from top to bottom of document
+      var theRatio = (rootElement.scrollTop/scrollTotal);
+      if (theRatio > 0.4) {
+        // Show button
+        scrollToTopBtn.classList.add("fade");
+      } else {
+        // Hide button
+        scrollToTopBtn.classList.remove("fade");
+      }
+    }
+
+    // Scroll to top logic
+    function scrollToTop() { rootElement.scrollTo({top: 0, behavior: "smooth"});}
+
+    scrollToTopBtn.addEventListener("click", scrollToTop);
+    document.addEventListener("scroll", handleScroll);
+  </script>
+</footer>

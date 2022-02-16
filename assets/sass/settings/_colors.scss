@@ -1,0 +1,26 @@
+// *----------------------------------*\
+//  Settings > Colors
+// *----------------------------------*/
+
+:root {
+  --color-text-primary:   #181818;
+  --color-text-secondary: #646F82;
+
+  --color-white:   #FFFFFF;
+  --color-error:   #CC3C64;
+  --color-success: #07815C;
+  --color-border:  #ECECEC;
+  --color-border-info:     #3366FF;
+  --color-border-success:  #52BD95;
+  --color-border-warning:  #FFB020;
+  --color-border-danger:   #D14343;
+
+  --background-primary:   #FFFFFF;
+  --background-secondary: #F6F6F6;
+  --background-info:      #F3F6FF;
+  --background-success:   #ECFDF5;
+  --background-warning:   #FFFAF2;
+  --background-danger:    #FDF4F4;
+
+  --background-hero: #fbfbfb; // JJ changed 12-16-21 from var(--background-secondary);
+}

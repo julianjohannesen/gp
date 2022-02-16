@@ -1,0 +1,173 @@
+{{#contentFor 'title'}}{{t 'Archive' }}{{/contentFor}}
+
+{{!-- Show all website tags --}}
+<style>
+    .tags-side .c-archive-tags {
+        grid-template-columns: repeat(auto-fit, minmax(134px, 1fr));
+        gap: 10px;
+    }
+</style>
+
+{{#get 'tags' limit='all'}}
+    {{#if tags}}
+        <div class='o-grid'>
+            <div class='o-grid__col'>
+                <div class='c-title-bar'>
+                    <h2 class='c-title-bar__title'>{{t 'Tags' }}</h2>
+                    <span class='c-title-bar__divider'></span>
+                </div>
+            </div>
+        </div>
+
+        <div class='o-grid'>
+            <div class='o-grid__col tags-side'>
+                <div class='c-archive-tags'>
+                    {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
+                    {{#foreach tags}}
+                    <a href='{{ url }}'>
+                        <div>{{ name }}<sup class='u-type-xs u-type-400'>({{ count.posts }})</sup></div>
+                    </a>
+                    {{/foreach}}
+                    {{/get}}
+                </div>
+            </div>
+        </div>
+    {{/if}}
+{{/get}}
+
+<style>
+    .archive-menu-side h1 {
+        padding: 40px;
+        text-align: center;
+        font-size: 1.5em;
+    }
+
+    .archive-menu-side li a {
+        text-decoration: none;
+        color: #2d2f31;
+    }
+
+
+    nav.archive-menu-side {
+        background: #d9d9d9;
+        margin: 10px auto;
+        position: relative;
+        width: 100%;
+    }
+
+    nav.archive-menu-side:first-child {
+        margin: 0 auto;
+    }
+
+    .archive-menu-side span.labelSpan {
+        padding: 1em;
+        background: #2d2f31;
+        color: white;
+        font-size: 1.2em;
+        font-variant: small-caps;
+        cursor: pointer;
+        display: block;
+    }
+
+    /*.archive-menu-side span::after {
+        float: right;
+        right: 10%;
+        content: "+";
+    }*/
+
+    .archive-menu-side span.plusMinus {
+        color: white;
+        content: '+';
+        font-size: 1.5em;
+        position: absolute;
+        right: 24px;
+        top: 14px;
+        transition: opacity .6s;
+    }
+
+    .archive-menu-side .slide {
+        clear: both;
+        width: 100%;
+        overflow: hidden;
+        text-align: left;
+        transition: max-height 0.75s ease;
+        max-height: 1px;
+    }
+
+    .archive-menu-side .slide li {
+        padding: 3% 0px;
+        width: 90%;
+    }
+
+    .archive-menu-side #touch,
+    .archive-menu-side #touch2 {
+        position: absolute;
+        opacity: 0;
+        height: 0px;
+    }
+
+    .archive-menu-side #touch:checked+.slide,
+    .archive-menu-side #touch2:checked+.slide {
+        max-height:1000px;
+    }
+</style>
+
+{{!-- Posts by date title  --}}
+<div class='o-grid'>
+    <div class='o-grid__col o-grid__col--9-10-m'>
+        <div class='c-title-bar'>
+            <h2 class='c-title-bar__title'>{{t 'Posts by Date' }}</h2>
+            <span class='c-title-bar__divider'></span>
+        </div>
+    </div>
+</div>
+
+{{!-- Posts by date list  --}}
+<div class='o-grid'>
+    <div class='o-grid__col'>
+
+        {{#get 'posts'  filter="published_at:>'2022-01-01'+published_at:<'2022-02-01'+tags:-hash-site-work" limit='all' as |posts|}}
+        <nav class="archive-menu-side">
+            <label class="touchLabel" for="touch"><span class="labelSpan">January</span><span class="plusMinus">+</span></label>
+            <input type="checkbox" id="touch">
+            <ul class="slide">
+                {{#if posts}}
+                    {{#foreach posts}}
+                    <li>
+                        <time datetime='{{ date format='YYYY-MM-DD' }}'>{{ date format='D' }}:</time>
+                        <a href='{{ url }}'><strong>{{ title }}</strong></a>    
+                    </li>
+                    {{/foreach}}
+                {{/if}}
+            </ul>
+        </nav> 
+        {{/get}}
+
+        {{#get 'posts'  filter="published_at:>'2021-12-01'+published_at:<'2022-01-01'+tags:-hash-site-work" limit='all' as |posts|}}
+        <nav class="archive-menu-side">
+            <label class="touchLabel" for="touch2"><span class="labelSpan">December</span><span class="plusMinus">+</span></label>
+            <input type="checkbox" id="touch2">
+            <ul class="slide">
+                {{#if posts}}
+                    {{#foreach posts}}
+                    <li>
+                        <time datetime='{{ date format='YYYY-MM-DD' }}'>{{ date format='D' }}:</time>
+                        <a href='{{ url }}'><strong>{{ title }}</strong></a>
+                    </li>
+                    {{/foreach}}
+                {{/if}}
+            </ul>
+        </nav>   
+        {{/get}}
+
+    </div>
+</div>
+
+<script>
+    const plusMinuses = document.querySelectorAll('.plusMinus');
+    const archiveInputs = document.querySelectorAll('.touchLabel + [type=checkbox]');
+    archiveInputs.forEach(item => item.addEventListener('change', (e)=>{
+        const theSpan = e.target.previousElementSibling.querySelector('.plusMinus');
+        e.target.checked ? theSpan.textContent = '-' : theSpan.textContent = '+'
+    }));
+</script>

@@ -1,0 +1,15 @@
+<aside class="sidebar">
+
+    {{> subscribe-box-side }}
+
+    {{> random-widget }}
+
+    {{^is "home"}}
+        {{#is "index, archive, post, tag, author" }}
+            {{> archive-side }}
+        {{/is}}
+    {{/is}}
+
+    {{> home/featured-posts-side }}  
+
+</aside>

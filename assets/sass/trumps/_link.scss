@@ -1,0 +1,11 @@
+/*------------------------------------*\
+  Trumbs > Links
+\*------------------------------------*/
+
+.u-link {
+  color: var(--ghost-accent-color);
+
+  @include attention() {
+    text-decoration: underline;
+  }
+}

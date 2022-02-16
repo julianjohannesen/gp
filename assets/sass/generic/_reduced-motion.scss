@@ -1,0 +1,12 @@
+/*------------------------------------*\
+  Generic > Reduced Motion
+\*------------------------------------*/
+
+// Stop no-essential motion if the user has requested the operating system to minimize the amount of motion it uses.
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

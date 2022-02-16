@@ -1,0 +1,26 @@
+{{!--
+  Show all featured posts
+  Change the limit value from 'all' to whatever number you want to show a limited number of featured posts, for example, to show only three, use limit='3'
+--}}
+{{#get 'posts' filter='featured:true' limit='all'}}
+  {{#if posts}}
+    <div class='o-grid'>
+      {{!-- JJ removed o-grid__col--center from below on 1-5-22  --}}
+      <div class='o-grid__col o-grid__col--9-10-m o-grid__col--2-3-l'>
+        <div class='c-title-bar'>
+          <h2 class='c-title-bar__title'>{{t 'Featured Posts' }}</h2>
+          <span class='c-title-bar__divider'></span>
+        </div>
+      </div>
+    </div>
+
+    <div class='o-grid'>
+      {{!-- JJ removed o-grid__col--center from below on 1-5-22  --}}
+      <div class='o-grid__col o-grid__col--9-10-m o-grid__col--2-3-l'>
+        {{#foreach posts}}
+          {{> post-card-side }}
+        {{/foreach}}
+      </div>
+    </div>
+  {{/if}}
+{{/get}}

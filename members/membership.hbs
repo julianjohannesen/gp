@@ -1,0 +1,22 @@
+{{!< ../default}}
+
+{{#contentFor 'title'}}{{t 'Premium Membership'}}{{/contentFor}}
+
+<div class='o-grid'>
+  <div class='o-grid__col o-grid__col--center o-grid__col--3-4-m o-grid__col--2-3-l'>
+    <div class='c-archive c-archive--no-border'>
+      <h1 class='c-archive__title'>{{t 'Premium Membership'}}</h1>
+      <p class='c-archive__description'>{{t 'Unlock full access to {siteTitle} and see the entire library of members-only content.' siteTitle=@site.title}}</p>
+    </div>
+  </div>
+</div>
+
+<div class='o-grid'>
+  <div class='o-grid__col o-grid__col--center o-grid__col--3-4-m o-grid__col--2-3-l'>
+    {{> membership-plans }}
+
+    {{#unless @member}}
+      <p class='u-mt-32 u-type-xs u-type-500'>{{t 'Already have an account?'}} <a href='{{ @site.url }}/signin/' class='u-link'>{{t 'Log in'}}</a></p>
+    {{/unless}}
+  </div>
+</div>

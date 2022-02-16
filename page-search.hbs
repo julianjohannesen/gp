@@ -1,0 +1,31 @@
+{{!-- Use the default template for header and footer  --}}
+{{!< default}}
+
+{{#contentFor 'title'}}{{ meta_title }}{{/contentFor}}
+
+{{#page}}
+
+<div class='o-grid'>
+    <div class='o-grid__col o-grid__col--9-10-m'>
+        <article class='c-{{ post_class }}'>
+            {{> post-header }}
+
+            <section class='c-content'> 
+
+                <form>
+                    <input id="search-field" />
+                    <input type="submit" value="search">
+                </form>
+
+                <section id="results"></section>
+            </section>
+
+            <script>
+                jQuery("#search-field").ghostHunter({results: "#results"});
+            </script>
+
+        </article>
+    </div>
+</div>
+
+{{/page}}

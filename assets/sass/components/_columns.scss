@@ -1,0 +1,29 @@
+/*------------------------------------*\
+  Components > Column
+\*------------------------------------*/
+
+@include mq($from: tablet) {
+  .c-columns {
+    column-count: 2;
+    column-gap: $space-40;
+    column-rule-width: 1px;
+    column-rule-style: solid;
+    column-rule-color: var(--color-border);
+
+    &.c-note--info {
+      column-rule-color: var(--color-border-info);
+    }
+
+    &.c-note--success {
+      column-rule-color: var(--color-border-success);
+    }
+
+    &.c-note--warning {
+      column-rule-color: var(--color-border-warning);
+    }
+
+    &.c-note--danger {
+      column-rule-color: var(--color-border-danger);
+    }
+  }
+}

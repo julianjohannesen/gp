@@ -1,0 +1,54 @@
+{{!< default}}
+
+{{#contentFor 'title'}}{{ meta_title }}{{/contentFor}}
+
+{{#post}}
+
+<div class='o-grid'>
+  <div class='o-grid__col o-grid__col--center o-grid__col--9-10-m o-grid__col--2-3-l'>
+    <article class='c-{{ post_class }}'>
+      {{> post-header }}
+
+      {{#if access}}
+        {{#if @custom.show_table_of_contents_on_all_posts}}
+          {{> table-of-contents }}
+        {{/if}}
+      {{/if}}
+
+      <section class='c-content {{#unless access}} c-content--has-shadow {{/unless}}'>
+        {{ content }}
+      </section>
+
+      {{!-- Show the tags, share, author, subscribe box, and comments if visitor can access the post, this means that:
+      1. The post is public for anyone
+      2. The post is published for subscribers and the visitor is a subscriber
+      3. The post is for paid members only and the visitor is a paid member --}}
+      {{#if access}}
+        {{#if tags}}
+          <section class='c-tags'>
+            {{ tags separator='' }}
+          </section>
+        {{/if}}
+
+        {{> share }}
+
+        {{!-- JJ removed 12-17-21 --}}
+        {{!--#primary_author--}}
+          {{!--> card-author --}}
+        {{!--/primary_author--}}
+
+        {{!--> subscribe-box --}}
+
+        {{!-- JJ removed 12-17-21 --}}
+        {{!--> disqus --}}
+
+      {{!-- If the post is published for members and paid members and the visitor is not one of those, show the upgrade box --}}
+      {{else}}
+      {{!-- JJ removed 12-17-21 --}}
+        {{!--> membership-upgrade --}}
+      {{/if}}
+    </article>
+  </div>
+</div>
+
+{{/post}}

@@ -1,0 +1,51 @@
+/*------------------------------------*\
+  Components > Table of Contents
+\*------------------------------------*/
+
+.c-table-of-contents {
+  padding: $space-32;
+  background-color: var(--background-secondary);
+  box-shadow: inset 0 0 0 .5px var(--color-border);
+  border-left: $space-2 solid var(--ghost-accent-color);
+
+  &__heading {
+    padding-bottom: $space-8;
+    margin-bottom: $space-24;
+    font-variant: petite-caps;
+    font-weight: $type-500;
+    font-size: $type-lg;
+    line-height: 1;
+    box-shadow: 0 1px 0 0 var(--color-border);
+  }
+
+  &__content {
+    > * {
+      font-size: $type-md;
+      line-height: $type-md-lh;
+    }
+  }
+
+  &__list {
+    padding-left: $space-4;
+
+    &:first-child > .c-table-of-contents__list-item:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__list-item {
+    margin-top: $space-8;
+
+    &::marker {
+      color: var(--color-text-secondary);
+    }
+  }
+
+  &__list-link {
+    text-decoration: underline;
+
+    @include attention() {
+      color: var(--ghost-accent-color);
+    }
+  }
+}

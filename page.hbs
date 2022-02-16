@@ -1,0 +1,31 @@
+{{!< default}}
+
+{{#contentFor 'title'}}{{ meta_title }}{{/contentFor}}
+
+{{#post}}
+
+<div class='o-grid'>
+  <div class='o-grid__col o-grid__col--center o-grid__col--9-10-m o-grid__col--2-3-l'>
+    <article class='c-{{ post_class }}'>
+      {{> post-header }}
+
+      {{#if access}}
+        {{#if @custom.show_table_of_contents_on_all_pages}}
+          {{> table-of-contents }}
+        {{/if}}
+      {{/if}}
+
+      <section class='c-content'>
+        {{ content }}
+      </section>
+
+      {{!-- If the page is published for members and paid members and the visitor is not one of those, show the upgrade box --}}
+      {{!-- {{#unless access}}
+        {{> membership-upgrade }}
+      {{/unless}} --}}
+      <hr>
+    </article>
+  </div>
+</div>
+
+{{/post}}

@@ -1,0 +1,34 @@
+/*------------------------------------*\
+  Components > Note
+\*------------------------------------*/
+
+.c-note {
+  padding: $space-32;
+  border-radius: $space-4;
+  background-color: var(--background-secondary);
+  box-shadow: inset 0 0 0 .5px var(--color-border);
+
+  > * + * {
+    margin-top: $space-24;
+  }
+
+  &--info {
+    background-color: var(--background-info);
+    box-shadow: inset 0 0 0 .5px var(--color-border-info);
+  }
+
+  &--success {
+    background-color: var(--background-success);
+    box-shadow: inset 0 0 0 .5px var(--color-border-success);
+  }
+
+  &--warning {
+    background-color: var(--background-warning);
+    box-shadow: inset 0 0 0 .5px var(--color-border-warning);
+  }
+
+  &--danger {
+    background-color: var(--background-danger);
+    box-shadow: inset 0 0 0 .5px var(--color-border-danger);
+  }
+}

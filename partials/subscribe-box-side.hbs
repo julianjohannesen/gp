@@ -1,0 +1,20 @@
+{{!-- Show the subscribe box if the visitor is not currently a member --}}
+{{#unless @member}}
+{{!-- JJ removed padding and margin from 1st 2 divs --}}
+  <div class='{{#is 'home'}} o-grid {{/is}} is-membership'>
+  {{!-- JJ removed o-grid__col--center from below div on 1-4-22 --}}
+    <div class='{{#is 'home'}} o-grid__col  o-grid__col--9-10-m o-grid__col--2-3-l {{/is}}'>
+      <section class='c-subscribe'>
+        <div class='c-subscribe__content'>
+          {{!-- JJ removed this code from below {{t '{siteTitle} Newsletter' siteTitle=@site.title}} --}}
+          <h2 class='c-subscribe__heading u-type-500 u-mb-8'>The Newsletter</h2>
+          <p class='u-mb-16'>{{t 'Join the newsletter to receive the latest updates in your inbox.' }}</p>
+          {{> subscribe-form inputLabel='subscribe-box'}}
+        </div>
+        <div class='c-subscribe__icon'>
+          {{> subscribe-box-icon }}
+        </div>
+      </section>
+    </div>
+  </div>
+{{/unless}}

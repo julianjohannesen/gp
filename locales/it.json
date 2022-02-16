@@ -1,0 +1,68 @@
+{
+  "Skip to content": "Salta al contenuto",
+  "Table of Contents": "Sommario",
+
+  "Loading": "Caricamento",
+  "More Posts ↓": "Altri articoli ↓",
+  "All Posts →": "Tutti gli articoli →",
+
+  "Recent Posts": "Articoli recenti",
+  "Featured Posts": "In evidenza",
+  "Page Not Found": "Pagina non trovata",
+  "Published with {ghostLink} & {themeLink}": "Pubblicato con {ghostLink} & {themeLink}",
+
+  "Share on Twitter": "Condividi su Twitter",
+  "Share on Facebook": "Condividi su Facebook",
+  "Share on LinkedIn": "Condividi su LinkedIn",
+  "Share on Pinterest": "Condividi su Pinterest",
+  "Share via Email": "Condividi via email",
+  "Copy link": "Copia link",
+  "Link copied to clipboard": "Link copiato negli appunti",
+
+  "Archive": "Archivio",
+  "Tags": "Tag",
+  "1 min read": "1 minuto",
+  "% min read": "% minuti",
+
+  "Paid": "Abbonati",
+  "Members": "Iscritti",
+  "Public": "Pubblico",
+
+  "Account": "Account",
+  "Log in": "Login",
+  "Log out": "Logout",
+  "Continue": "Continua",
+  "Subscribe": "Iscriviti",
+  "Membership": "Membership",
+  "Your email address": "Il tuo indirizzo email",
+  "{siteTitle} Newsletter": "{siteTitle} Newsletter",
+  "Please check your inbox and click the link to complete the login.": "Controlla la tua casella di posta e fai clic sul link per completare il login.",
+  "Please check your inbox and click the link to confirm your subscription.": "Controlla la tua casella di posta e fai clic sul link per confermare l'iscrizione.",
+  "Please enter a valid email address!": "Si prega di inserire un indirizzo email valido!",
+  "An error occurred, please try again later.": "Si è verificato un errore, riprova più tardi.",
+
+  "Already have an account?": "Hai già un account?",
+  "Don't have an account yet?": "Non hai ancora un account?",
+
+  "This Content Is for Members": "Questo contenuto è per gli iscritti",
+  "This Content Is for Paid Members": "Questo contenuto è per gli abbonati",
+  "Join the newsletter to receive the latest updates in your inbox.": "Iscriviti alla newsletter per ricevere gli ultimi aggiornamenti nella tua casella di posta.",
+
+  "Premium Membership": "Abbonamento premium",
+  "Unlock full access to {siteTitle} and see the entire library of members-only content.": "Sblocca l'accesso completo a {siteTitle} e accedia all'intera libreria di contenuti riservati agli abbonati.",
+  "Subscribe to {siteTitle}": "Iscriviti a {siteTitle}",
+  "Monthly": "Mensile",
+  "Yearly": "Annuale",
+
+  "Log in to {siteTitle}": "Accedi a {siteTitle}",
+  "Send login link": "Invia link di accesso",
+
+  "Your subscription will expire on": "Il tuo abbonamento scadrà il",
+  "Your plan": "Il tuo piano",
+  "Card": "Carta",
+  "Expires": "Scade",
+  "Next bill date": "Prossima data di fatturazione",
+  "Edit billing info": "Modifica i dati di fatturazione",
+  "You have an active {siteTitle} account with access to all posts.": "Hai un account {siteTitle} attivo con accesso a tutti i post.",
+  "You are subscribed to free updates from {siteTitle}, but don't have a paid subscription to read all the posts.": "Sei iscritto agli aggiornamenti gratuiti da {siteTitle}, ma non hai un abbonamento a pagamento per leggere tutti i post."
+}

@@ -1,0 +1,25 @@
+<section class='c-card-author'>
+  {{#if profile_image}}
+    <div class='c-card-author__media'>
+      <a href='{{ url }}'>
+        <img class='c-card-author__image lazyload' data-src='{{ img_url profile_image size='profile-image-large' }}' alt='{{ name }}' width='80' height='80'>
+      </a>
+    </div>
+  {{/if}}
+
+  <div class='c-card-author__content'>
+    <h3 class='c-card-author__name'>
+      <a href='{{ url }}'>{{ name }}</a>
+      {{#if twitter}}
+        <a href='{{ twitter_url }}'>
+          <span data-icon='ei-sc-twitter' data-size='s'></span>
+          <span class='u-hidden-visually'>Twitter</span>
+        </a>
+      {{/if}}
+    </h3>
+
+    {{#if bio}}
+      <p class='c-card-author__bio'>{{ bio }}</p>
+    {{/if}}
+  </div>
+</section>

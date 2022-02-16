@@ -1,0 +1,42 @@
+{{!< default}}
+
+{{#contentFor 'title'}}{{ meta_title }}{{/contentFor}}
+
+{{!-- Show the custom homepage content --}}
+{{#page}}
+  <div class='o-grid'>
+    <div class='o-grid__col o-grid__col--center o-grid__col--9-10-m o-grid__col--2-3-l {{#if feature_image}}o-grid__col--4-4-l{{/if}}'>
+      <div class='c-home {{#unless feature_image}}c-home--content-only{{/unless}}' style='grid-template-areas: "media content side"; grid-template-columns: repeat(3,1fr)'>
+        {{#if feature_image}}
+          <div class='c-home__media'>
+            <img class='c-home__image lazyload' data-src='{{ img_url feature_image size='home-image-default' }}' alt='{{ @site.title }}'>
+          </div>
+        {{/if}}
+
+        <div class='c-home__content {{#unless feature_image}}c-home__content--only{{/unless}}'>
+          <section class='c-content'>
+            {{ content }}
+
+            {{#unless @member}}
+              {{> subscribe-form inputLabel='subscribe-home-intro'}}
+            {{/unless}}
+          </section>
+        </div>
+        {{!-- JJ added 1-3 --}}
+        <div class='c-home__content' style="grid-area:side">
+          <section class="c-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </section>    
+        </div>
+      </div>
+    </div>
+  </div>
+{{/page}}
+
+{{> home/featured-posts }}
+
+{{> home/recent-posts }}
+
+{{> home/all-posts-link }}
+
+{{> subscribe-box }}

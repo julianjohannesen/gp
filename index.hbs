@@ -1,0 +1,23 @@
+{{!< default}}
+
+{{#contentFor 'title'}}{{t 'Blog' }}{{/contentFor}}
+
+<div class='o-grid' style="margin:0;">
+  {{!-- jj removed o-grid__col--center and o-grid__col--2-3-l on 1/11/22 --}}
+  <div class='o-grid__col o-grid__col--9-10-m' style="">
+    <div class='c-archive' style="padding-top:2em; padding-bottom:0; border:none; margin:0;">
+      <h1 class='c-archive__title'>{{t 'Blog' }}</h1>
+    </div>
+  </div>
+</div>
+
+<div class='o-grid post-list' style="margin-top: 3em;">
+  {{!-- jj removed o-grid__col--center and o-grid__col--2-3-l on 1/11/22 --}}
+  <div class='o-grid__col o-grid__col--9-10-m'>
+    {{> loop }}
+  </div>
+</div>
+
+<div class='o-grid'>
+  {{ pagination }}
+</div>
