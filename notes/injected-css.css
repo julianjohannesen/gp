@@ -1,6 +1,15 @@
+/**************************/
+/* GLOBAL                 */
+/**************************/
+
 :root {
   /* custom hero background color */
   --background-hero: #fbfbfb;
+}
+
+img {
+  width: 100%;
+  height: auto;
 }
 
 /**************************/
@@ -10,13 +19,62 @@
 div.c-site-container {
   flex-flow: row wrap;
   justify-content: center;
+  min-width: 370px;
+  /*max-width: 1200px;*/
+  margin: 0 auto;
   /*gap: 1rem;*/
 }
 
 header,
 footer {
-  /* relying on justify-content: center to center the site, so must explicitly set header and footer width to 100% */
+  /* relying on 'justify-content: center' to center the site, so must explicitly set header and footer width to 100% */
   width: 100%;
+}
+
+/* Two column layout */
+
+.twoCol {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+@media (max-width: 46em) {
+  .twoCol {
+    display: block;
+    width: 100%;
+  }
+  .twoCol > main.o-wrapper,
+  .twoCol > aside.sidebar {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+  .sidebar div.is-membership {
+    width: 100%;
+  }
+}
+
+.twoCol main.o-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  /* max-width: 66%; */
+
+  flex: 2 1 auto;
+}
+
+@media (min-width: 46.01em) {
+  .twoCol main.o-wrapper {
+    max-width: 66%;
+  }
+}
+
+.o-grid {
+  max-width: 100%;
+  margin: 0;
+  justify-content: flex-start;
 }
 
 /* Back to top link inserted into footer  */
@@ -52,9 +110,8 @@ div.scrollToTop button {
   opacity: 1;
 }
 
-
 /**************************/
-/* HEADER  */
+/* HEADER                 */
 /**************************/
 
 /* header background color and padding */
@@ -122,8 +179,7 @@ header.c-post-header {
 
 .c-post {
   margin: 0;
-  max-width: 100%;
-  /*was none*/
+  max-width: 100%; /*was none*/
 }
 
 .c-content {
@@ -151,37 +207,10 @@ article.page h2 {
   margin-bottom: 0.35em;
 }
 
-/* Allow for floating images to left or right on large screens */
-
-.float-left-half figure,
-.float-left-two-thirds figure {
-  float: left;
-  margin: 8px 20px 6px 0;
-}
-
-.float-right-half figure,
-.float-right-two-thirds figure {
-  float: right;
-  margin: 8px 0 6px 20px;
-}
-
-.float-left-half figure,
-.float-right-half figure {
-  max-width: 50%;
-}
-
-@media (min-width: 64em) {
-
-  .float-left-two-thirds figure,
-  .float-right-two-thirds figure {
-    max-width: 67%;
-  }
-}
-
 /* Call out card css */
 
 .kg-callout-card-blue {
-  background: rgba(33, 172, 232, .12);
+  background: rgba(33, 172, 232, 0.12);
 }
 
 .kg-callout-card {
@@ -191,35 +220,33 @@ article.page h2 {
   border-radius: 3px;
 }
 
-/* About Page Images */
+/**************************/
+/* ABOUT PAGE             */
+/**************************/
+
+/* Images */
 figure.about-image,
-figure.about-image>* {
+figure.about-image > * {
   margin: 0;
-  min-width: auto;
-  /* previously set to 100% */
+  min-width: auto; /* previously set to 100% */
   padding: 0;
   height: auto;
 }
 
-figure.about-image img,
 figure.about-image figcaption {
   max-width: 300px;
 }
 
-figure.about-image--med img,
 figure.about-image--med figcaption {
   max-width: 200px;
 }
 
-figure.about-image--small img,
 figure.about-image--small figcaption {
   max-width: 100px;
 }
-
 .floatleft {
   float: left;
 }
-
 figure.floatleft,
 figure.floatleft img {
   padding-top: 8px;
@@ -229,94 +256,23 @@ figure.floatleft img {
 .floatright {
   float: right;
 }
-
 figure.floatright,
 figure.floatright img {
   padding-top: 8px;
   padding-left: 8px;
 }
-
 .clear {
   clear: both;
 }
 
 figure.about-image figcaption {
-    font-style: italic;
-    font-size: 80%;
+  font-style: italic;
+  font-size: 80%;
 }
-
-@media(max-width:450px){
-    figure.floatleft,
-    figure.floatright {
-        float:none;
-        padding: 0;
-    }
-
-    figure.floatleft img,
-    figure.floatright img {
-        margin: 1em auto;
-        max-width: 100%;
-        padding: 0;
-    }
-
-    figure.about-image figcaption {
-        margin: 0 auto;
-    }
-}
-
 
 /**************************/
 /* HOMEPAGE  */
 /**************************/
-
-/* Two column section on homepage */
-
-.twoCol {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-
-@media (max-width:46em) {
-  .twoCol {
-    display: block;
-    width: 100%;
-  }
-
-  .twoCol>main.o-wrapper,
-  .twoCol>aside.sidebar {
-    max-width: 100%;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 16px;
-  }
-
-  .sidebar div.is-membership {
-    width: 100%;
-  }
-}
-
-.twoCol main.o-wrapper {
-  display: flex;
-  flex-flow: row wrap;
-  /* max-width: 66%; */
-
-  flex: 2 1 auto;
-}
-
-@media (min-width: 46.01em) {
-  .twoCol main.o-wrapper {
-    max-width: 66%;
-  }
-}
-
-.o-grid {
-  max-width: 100%;
-  margin: 0;
-  justify-content: flex-start;
-}
 
 @media (min-width: 64em) {
   .c-home {
@@ -326,21 +282,32 @@ figure.about-image figcaption {
 }
 
 img.c-home__image {
-  width: 350px;
-  min-width: 225px;
+  width: 100%;
+    min-width: 300px;
+  height: auto;
+  aspect-ratio: 1/1;
   margin: 0 auto;
 }
 
-/**************************/
-/* SIDEBAR  */
-/**************************/
+.home-template section.c-content p {
+  font-size: min(max(24px, 2vw), 28px);
+  line-height: 1.5em;
+}
 
+@media (max-width: 1023px) {
+  .home-template div.c-home__content {
+    padding: 32px;
+  }
+}
+
+/**************************/
+/* SIDEBAR                */
+/**************************/
 
 .sidebar {
   background-color: #fbfbfb;
   display: flex;
-  flex: 1 0 auto;
-  /* Grow equally, don't shrink, base size on auto */
+  flex: 1 0 auto; /* Grow equally, don't shrink, base size on auto */
   flex-flow: row wrap;
   align-content: flex-start;
   /* max-width: 33%; */
@@ -348,14 +315,14 @@ img.c-home__image {
   padding: 0;
 }
 
-@media (min-width:46.1em) {
+@media (min-width: 46.1em) {
   .sidebar {
-    max-width: 33%
+    width: 33%;
   }
 }
 
-.sidebar>section,
-.sidebar>.o-grid,
+.sidebar > section,
+.sidebar > .o-grid,
 .sidebar .is-membership.o-grid,
 .sidebar .is-membership.o-grid .o-grid__col {
   margin: 0;
@@ -402,4 +369,9 @@ img.c-home__image {
 .sidebar .c-form-group__btn {
   width: 100%;
   margin-left: 0;
+}
+
+/* Democracy's Top Ten */
+.page-democracys-top-ten article.page h2.kg-header-card-header {
+  border-bottom: none;
 }
