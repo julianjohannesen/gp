@@ -1,3 +1,4 @@
+
 /**************************/
 /* GLOBAL                 */
 /**************************/
@@ -108,6 +109,25 @@ div.scrollToTop button {
 
 .scrollToTop button.fade {
   opacity: 1;
+}
+    
+p.read-more a {
+	border-radius: 5px;
+    box-shadow: rgb(0 0 0 / 24%) 0px 8px 16px -2px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 18px;
+    background-color: rgba(209, 35, 42, 1);
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+p.read-more a:hover {
+  color: #ffffff;
+  background-color: rgba(174, 30, 34, 1);
+  text-decoration: none;
 }
 
 /**************************/
@@ -376,6 +396,12 @@ figure.about-image figcaption {
 /***********************/
 /* DEMOCRACY'S TOP TEN */
 /***********************/
+    
+    .page-democracys-top-ten .c-content p {
+        font-size: min(max(20px, 2vw), 28px);
+    	line-height: 1.2em;
+    	margin: 0.4em 0;   
+    }
 
 .page-democracys-top-ten article.page h2 {
   border-bottom: none;
@@ -387,6 +413,7 @@ figure.about-image figcaption {
 
 .page-democracys-top-ten ol.top-ten {
   list-style: none;
+    margin-left: 0;
 }
 
 .page-democracys-top-ten li.top-ten-item {
@@ -402,10 +429,11 @@ figure.about-image figcaption {
   font-weight: 900;
   min-width: fit-content;
   padding: 30px;
+  padding-left: min(max(5px, 1.5vw), 30px);
   padding-top: 34px;
 }
 
-.kg-header-card.kg-style-image::before {
+.page-democracys-top-ten .kg-header-card.kg-style-image::before {
   background: linear-gradient(
     180deg,
     rgba(209, 35, 42, 0),
@@ -413,7 +441,11 @@ figure.about-image figcaption {
   );
 }
 
-.kg-header-card.kg-style-image h2,
-.kg-header-card.kg-style-image h3 {
+.page-democracys-top-ten .kg-header-card.kg-style-image h2,
+.page-democracys-top-ten .kg-header-card.kg-style-image h3 {
   text-shadow: 1px 1px 2px rgba(209, 35, 42, 0.7);
+}
+    
+.page-democracys-top-ten p.read-more {
+  margin-top: 1rem;
 }
