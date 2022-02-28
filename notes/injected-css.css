@@ -220,85 +220,6 @@ article.page h2 {
   border-radius: 3px;
 }
 
-/**************************/
-/* ABOUT PAGE             */
-/**************************/
-
-/* Images */
-figure.about-image,
-figure.about-image > * {
-  margin: 0;
-  min-width: auto; /* previously set to 100% */
-  padding: 0;
-  height: auto;
-}
-
-figure.about-image figcaption {
-  max-width: 300px;
-}
-
-figure.about-image--med figcaption {
-  max-width: 200px;
-}
-
-figure.about-image--small figcaption {
-  max-width: 100px;
-}
-.floatleft {
-  float: left;
-}
-figure.floatleft,
-figure.floatleft img {
-  padding-top: 8px;
-  padding-right: 8px;
-}
-
-.floatright {
-  float: right;
-}
-figure.floatright,
-figure.floatright img {
-  padding-top: 8px;
-  padding-left: 8px;
-}
-.clear {
-  clear: both;
-}
-
-figure.about-image figcaption {
-  font-style: italic;
-  font-size: 80%;
-}
-
-/**************************/
-/* HOMEPAGE  */
-/**************************/
-
-@media (min-width: 64em) {
-  .c-home {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: "media content content";
-  }
-}
-
-img.c-home__image {
-  width: 100%;
-    min-width: 300px;
-  height: auto;
-  aspect-ratio: 1/1;
-  margin: 0 auto;
-}
-
-.home-template section.c-content p {
-  font-size: min(max(24px, 2vw), 28px);
-  line-height: 1.5em;
-}
-
-@media (max-width: 1023px) {
-  .home-template div.c-home__content {
-    padding: 32px;
-  }
-}
 
 /**************************/
 /* SIDEBAR                */
@@ -371,7 +292,128 @@ img.c-home__image {
   margin-left: 0;
 }
 
-/* Democracy's Top Ten */
-.page-democracys-top-ten article.page h2.kg-header-card-header {
+/**************************/
+/* HOMEPAGE  */
+/**************************/
+
+@media (min-width: 64em) {
+  .c-home {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "media content content";
+  }
+}
+
+img.c-home__image {
+  width: 100%;
+  min-width: 300px;
+  max-width: 400px;
+  height: auto;
+  aspect-ratio: 1/1;
+  margin: 0 auto;
+}
+
+.home-template section.c-content p {
+  font-size: min(max(24px, 2vw), 28px);
+  line-height: 1.5em;
+}
+
+@media (max-width: 1023px) {
+  .home-template div.c-home__content {
+    padding: 32px;
+  }
+}
+
+/**************************/
+/* ABOUT PAGE             */
+/**************************/
+
+/* Images */
+figure.about-image,
+figure.about-image > * {
+  margin: 0;
+  min-width: auto; /* previously set to 100% */
+  padding: 0;
+  height: auto;
+}
+
+figure.about-image figcaption {
+  max-width: 300px;
+}
+
+figure.about-image--med figcaption {
+  max-width: 200px;
+}
+
+figure.about-image--small figcaption {
+  max-width: 100px;
+}
+.floatleft {
+  float: left;
+}
+figure.floatleft,
+figure.floatleft img {
+  padding-top: 8px;
+  padding-right: 8px;
+}
+
+.floatright {
+  float: right;
+}
+figure.floatright,
+figure.floatright img {
+  padding-top: 8px;
+  padding-left: 8px;
+}
+.clear {
+  clear: both;
+}
+
+figure.about-image figcaption {
+  font-style: italic;
+  font-size: 80%;
+}
+
+/***********************/
+/* DEMOCRACY'S TOP TEN */
+/***********************/
+
+.page-democracys-top-ten article.page h2 {
   border-bottom: none;
+}
+
+.page-democracys-top-ten section.c-content {
+  counter-reset: li;
+}
+
+.page-democracys-top-ten ol.top-ten {
+  list-style: none;
+}
+
+.page-democracys-top-ten li.top-ten-item {
+  display: flex;
+  margin: 4em 0;
+}
+
+.page-democracys-top-ten li.top-ten-item::before {
+  color: #223959;
+  counter-increment: li;
+  content: counter(li);
+  font-size: min(max(100px, 5vw), 130px);
+  font-weight: 900;
+  min-width: fit-content;
+  padding: 30px;
+  padding-top: 34px;
+}
+
+.kg-header-card.kg-style-image::before {
+  background: linear-gradient(
+    180deg,
+    rgba(209, 35, 42, 0),
+    rgba(209, 35, 42, 0.5)
+  );
+}
+
+.kg-header-card.kg-style-image h2,
+.kg-header-card.kg-style-image h3 {
+  text-shadow: 1px 1px 2px rgba(209, 35, 42, 0.7);
 }
