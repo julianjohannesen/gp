@@ -1,10 +1,13 @@
 routes:
+  /organizations/:
+    template: page-about
+    data: page.organizations
   /about/:
     template: page-about
     data: page.about-mr-pillsbury
-  /search/:
-    template: page-search
-    data: page.search
+  #/search/:
+  #  template: page-search
+  #  data: page.search
   /membership/: members/membership
   /signup/: members/signup
   /signin/: members/signin
