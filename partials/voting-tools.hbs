@@ -1,0 +1,46 @@
+<style>
+    #voting-tools {
+        border-top: 1px solid lightgray;
+        padding:2em;
+
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-flow:row wrap;
+        gap:1em;
+    }
+    #voting-tools img {
+        max-width: 235px;
+    }
+    #voting-tools .heading-wrap {
+        display:flex;
+        flex-flow: column wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        margin: auto;
+    }
+    .learn-button {
+        width:100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+    }
+
+</style>
+{{!-- The title area  --}}
+<div id="voting-tools" class='o-grid'>
+    <img 
+        src="../assets/img/homepage/pillsbury-website-tools.webp"
+        width="235"
+        height="241"
+        alt="voting tools logo"
+    />
+    <div class="heading-wrap">
+        <h2 class="c-subscribe__heading u-type-500 u-mb-8">Voting Tools</h2>
+        <p class='u-mb-16'>{{t 'Resources on voting and elections.' }}</p>
+        <a href="/voting-tools" class="learn-button c-btn c-form-group__btn">Find Resources</a>
+    </div>
+</div>
