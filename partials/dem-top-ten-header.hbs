@@ -1,0 +1,57 @@
+<style>
+    /**************************************/
+    /*** Dem Top 10 ***/
+    /**************************************/
+    
+    .dem-top-ten-header {
+    	display: flex;
+        column-gap: 1.5em;
+        justify-content: start;
+        align-items: center;
+        
+        background-color: #00aac9;
+        padding: clamp(16px, 2em, 40px);
+        margin: 1.5rem -40px;
+        margin-top: 0;
+    }
+    
+    .dem-top-ten-header figure img {
+        min-width: 125px;
+        max-width: 450px;
+        margin: 0;
+    }
+    
+    .dem-top-ten-header p {
+        color: white;
+    	font-family: 'Istok Web', serif;
+    }
+    
+    .dem-top-ten-header p.header {
+    	font-size: clamp(2em, 4vw, 5em);
+    	line-height: 1.2em;
+        font-weight: bold;
+    }
+    
+    .dem-top-ten-header p.subheader {
+        color: hsl(214, 40%, 28%);
+    	font-size: clamp(1.5em, 2vw, 2em);
+    	line-height: 1.2em;
+        margin-top: 0;
+    }
+</style>
+
+<div class="dem-top-ten-header">
+  <figure>
+    <img
+      alt="Ballot Mark"
+      src="../../assets/img/pillsbury-website-topten-html.gif"
+      height="100"
+      width="100"
+    />
+  </figure>
+  <section>
+    <p class="header">Democracy's Top Ten</p>
+    <p class="subheader">Policies for Free and Fair Elections</p>
+    <!-- <a class="dem-top-10" href="" title="Democracy's Top Ten Page">Click Here</a> -->
+  </section>
+</div>

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fiverr's CSS Test</title>
+    <style>
+      .correct {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>1. Consider the following code snippet:</h2>
+
+    <div id="sectors">
+      <div id="A" class="A"></div>
+      <div id="B" class="B"></div>
+      <div id="C" class="C"></div>
+      <div id="D" class="D"></div>
+      <div id="E" class="E"></div>
+    </div>
+
+    <p>With these style rules:</p>
+
+    <style>
+      #sectors > div {
+        float: left;
+        position: relative;
+        width: 80px;
+        height: 80px;
+        margin: 16px;
+        background-color: red;
+        color: white;
+        text-align: center;
+      }
+      #sectors > div::after {
+        content: attr(id) "-Block";
+      }
+      #sectors > div.changecolor {
+        background-color: blue;
+      }
+      /* #sectors > div:not(.C):not(.D):not(.E) {background-color: blue;} */
+      #sectors > div:not(.C, .D, .E) {
+        background-color: blue;
+      }
+    </style>
+
+    <p>
+      Which of the following code snippets when inserted into CSS will change
+      the A and B div’s color from red to blue?
+    </p>
+    <p>
+      Answers:
+      <br />In style rule add this code "#sectors > div:not(.C):not(.D):not(.E)
+      {background-color: blue;}" <br />In style rule add this code "#sectors >
+      div:not(.C, .D, .E) {background-color: blue;}" <br /><span class="correct"
+        >Both A and B</span
+      >
+      <br />None of the above
+    </p>
+
+    <h2>
+      2. Which of the following will create a triangle effect using pure CSS3 on
+      a white background, without making use of background images?
+    </h2>
+    <style>
+      .triangle1 {
+        border-color: #a0c7ff #ffffff #ffffff #ffffff;
+        border-style: solid;
+        border-width: 20px;
+        width: 0px;
+        height: 0px;
+      }
+      .triangle2 {
+        background-color: #a0c7ff #ffffff #ffffff #ffffff;
+        border-style: solid;
+        border-width: 20px;
+        width: 0px;
+        height: 0px;
+      }
+      .triangle3 {
+        background-color: #a0c7ff #ffffff #ffffff #ffffff;
+        border-style: solid;
+        border-width: 1px;
+        width: 10px;
+        height: 10px;
+      }
+    </style>
+    <pre>
+      <div class="triangle1">Triangle 1</div>
+      <div class="triangle2">Triangle 2</div>
+      <div class="triangle3">Triangle 3</div>
+    </pre>
+    <p>Answers:</p>
+    <ul>
+      <li>It is not possible to do so.</li>
+      <li>
+        <span class="correct">
+          border-color: #a0c7ff #ffffff #ffffff #ffffff;border-style: solid;
+          border-width: 20px; width: 0px; height: 0px;
+        </span>
+      </li>
+      <li>
+        background-color: #a0c7ff #ffffff #ffffff #ffffff; border-style: solid;
+        border-width: 20px; width: 0px; height: 0px;
+      </li>
+      <li>
+        background-color: #a0c7ff #ffffff #ffffff #ffffff; border-style: solid;
+        border-width: 1px; width:10px; height: 10px;
+      </li>
+    </ul>
+
+    <h2>3. Can a percentage value be given in a ruby-align property?</h2>
+    <p>Answers: Yes <span class="correct">No</span></p>
+
+    <h2>
+      4. Consider the following font definition: font-weight:normal What is the
+      other way of getting the same result?
+    </h2>
+
+    <p>Answers</p>
+    <ul>
+      <li>font-weight:100</li>
+      <li>font-weight:900</li>
+      <li><span class="correct">font-weight:400</span></li>
+      <li>font-weight:700</li>
+    </ul>
+
+    <h2>
+      5. Consider the following code: div[class^="stronger"] { } Which
+      of the following statements is true?
+    </h2>
+    <p>Answers:</p> 
+    <ul>
+      <li class="correct">
+        It applies the rule only on divs who belong to a class that begins with "stronger".
+      </li>
+      <li>It applies the rule only on divs of class "stronger". </li>
+      <li>It applies the rule only on divs who belong to a class which end with "stronger".</li>
+      <li>It applies the rule only on divs who belong to a class which does not contain "stronger" in its name. </li>
+      
+    </ul>
+
+    <h2>
+      6. For the clear property, which of the following values is not valid?
+    </h2>
+    
+    <p>Answers:</p>
+    <ul>
+      <li>none</li>
+      <li>left</li>
+      <li>right</li>
+      <li class="correct">top</li>
+    </ul>
+    
+    <h2>7. What will be the output of the following code?</h2>
+    
+    <style>
+      .foo1 {
+        width: 400px;
+        height: 400px;
+        font-size: 50px;
+        background-color:yellow;
+        border: 35px solid white; /* This is what had to change for this to work */
+      }
+      .border-image {  
+        -webkit-border-image: -webkit-gradient(
+            linear,
+            0 0,
+            0 100%,
+            from(black),
+            to(red)
+          )
+          1 100%;
+        -webkit-border-image: -webkit-linear-gradient(black, red) 1 100%;
+        -o-border-image: -o-linear-gradient(black, red) 1 100%;
+        -moz-border-image: -moz-linear-gradient(black, red) 1 100%;
+        /* border-image: linear-gradient(45deg, rgb(0,143,104), rgb(250,224,66)) 1; */
+      }
+    </style>
+    <div class="foo1 border-image">Lorem</div>
+    
+    <p>Answers:</p>
+    <ul>
+      <li>The text "Lorem" will be colored black-red. </li>
+      <li>The div element will be colored black-red. </li>
+      <li>The border of div element will be colored black-red. </li>
+      <li class="correct">None of these.</li>
+    </ul> 
+    
+    
+    8. Which of the following is not a valid value for the font-smooth
+    property? Answers: auto never always normal length 
+    
+    9. Which of the following
+    option does not exist in media groups available in CSS3? Answers: continuous
+    or paged visual or tactile grid or bitmap braille or screen 
+    
+    10. Which of the
+    following is not a valid page break? Answers: page-break-inside
+    page-break-outside page-break-before page-break-after None of these 
+    
+    11.
+    Which statement is correct given the following? box-shadow:30px 20px 10px
+    5px black; Answers: The shadow will be spread out to 30px top, 20px right,
+    10px bottom, 5px left. The position of the horizontal black shadow is 30px
+    and the position of the vertical black shadow is 20px and blur distance is
+    10px and size of shadow is 5px. The position of the vertical black shadow is
+    30px and the position of the horizontal black shadow is 20px and size of
+    shadow is 10px and blur distance is 5px. The shadow will be spread out to
+    30px top and bottom, 20px left and right with 10px blur distance, 5px shadow
+    size. 
+    
+    12. The min-width property cannot be applied to the following element:
+    Answers: button span table row 
+    
+    13. Given the following problem: A drop
+    shadow needs to appear only at the bottom, and no images should be used.
+    Consider the following code: -moz-box-shadow: 0px 4px 4px #000;
+    -webkit-box-shadow: 0px 4px 4px #000; box-shadow-bottom: 5px #000; However,
+    this produces shadows on the rest of the element. Which of the following
+    code snippets will correct the issue? Answers: border-bottom:5px solid
+    #ffffff; -webkit-box-shadow: 0px 5px #000000; -moz-box-shadow: 0px 5px
+    #000000; box-shadow: 0px 5px #000000; -webkit-box-shadow: 0 4px 4px -2px
+    #000000; -moz-box-shadow: 0 4px 4px -2px #000000; box-shadow: 0 4px 4px -2px
+    #000000; -webkit-box-shadow: 0 4px 4px -2px inside #000000; -moz-box-shadow:
+    0 4px 4px -2px inside #000000; box-shadow: 0 4px 4px -2px inside #000000;
+    None of these. 
+    
+    14. Consider the following code: body { text-replace: "a" "b"
+    "b" "c" } What will be the output of the following string if the
+    text-replace style is implemented? andy lives behind cafe Answers: ndy lives
+    behind cbfe cndy lives cehind ccfe andy lives behind cafe andy lives cehind
+    bafe 
+    
+    15. What is the default value of the transform-style property? Answers:
+    preserve-3d flat none preserve 
+    
+    16. What will be the output of the following
+    code?…
+    <style>
+      .foo {
+        width: 100px;
+        height: 50px;
+        border-width: 3px;
+        -webkit-border-image: -webkit-gradient(
+            linear,
+            0 0,
+            0 100%,
+            from(black),
+            to(red)
+          )
+          1 100%;
+        -webkit-border-image: -webkit-linear-gradient(black, red) 1 100%;
+        -o-border-image: -o-linear-gradient(black, red)) 1 100%;
+        -moz-border-image: -moz-linear-gradient(black, red) 1 100%;
+      }
+    </style>
+    …
+    <div class=""foo"">Lorem</div>
+    Answers: The text "Lorem" will be colored black-red. The div element will be
+    colored black-red. The border of div element will be colored black-red. None
+    of these. 
+    
+    17. Which of the following styles is not valid for an image?
+    Answers: img { float= left } img { float: left here } img { background:
+    "black" } img { border-width: 10 } All of the above 
+    
+    18. Suppose that a
+    <tr>
+      tag has 10
+      <td>
+        tags. In this case which statement is correct given the following?
+        td:nth-child(3n+0){ background-color: orange; } Answers: It returns a
+        syntax error. The background color of the fourth td will be orange. The
+        background color of the third td will be orange. The background color of
+        every third td will be orange. 
+        
+        19. What is the best method to select all
+        elements except for the last one in an unordered list? Answers: Adding a
+        class to each
+        <li>
+          element but last Using li:not(:last-child) css selector Using
+          li:last-child selector None of the above 
+          
+          20. Which of the following
+          will apply a black inner glow with 25% opacity to a page element?
+          Answers: box-shadow: 0 0 8px rgba(255,255,255, 0.25); box-shadow:
+          inset 0 0 8px rgba(0,0,0, 0.25); box-shadow: 0 0 8px rgba(255,255,255,
+          25%); box-shadow: inset 0 0 8px rgba(0,0,0, 25%); 
+          
+          21. Which of the
+          following is the initial value for the column-fill property? Answers:
+          auto balance none 
+          
+          22. Which of the following can be used to add a
+          shadow around the div element below?
+          <div>Lorem ipsum</div>
+          Answers: box-shadow: 0 0 8px 2px #888; border-shadow: 0 0 8px 2px
+          #888; div-shadow: 8px 2px 0 0 #888; None of these 
+          
+          23. Which of the
+          following will decrease 50px from a DIV element whose width is 100%?
+          Answers: width: calc(100% – 50px); width: reduce(100% – 50px); width:
+          decrease(100% – 50px); width: 100% – 50px; 
+          
+          24. Which of the following
+          properties specifies the minimum number of lines of a paragraph that
+          must be left at the bottom of a page? Answers: orphans widows bottom
+          overflow None of these 
+          
+          25. What is the maximum value that can be given
+          to the voice-volume property? Answers: 10 100 500 None of the above
+          
+          
+          26. What is the initial value of the font-size property? Answers:
+          small medium large default 
+          
+          27. Is there a way to create a pure CSS3
+          text color gradient? Answers: Yes, using the text-gradient property.
+          Yes, but only for headings. There is no way to do a text color
+          gradient with CSS3. None of the above. 
+          
+          28. Consider the following
+          code: border-opacity:0.7; Given a div element that needs to have a
+          transparent red border, which of the following code samples will work
+          in conjunction with the code above to accomplish the requirement?
+          Answers: border: 1px solid rgba(255, 0, 0, 0.7); border: 1px solid
+          rgb(255, 0, 0, 0.7); border: 1px solid rgba(255, 255, 0, 0.7); border:
+          1px solid red; opacity: 0.7; 
+          
+          29. What is the initial value of the
+          animation-iteration-count property? Answers: 1 5 None 
+          
+          30. What is the
+          default value of the animation-direction property? Answers: none
+          normal alternate inherited 
+          
+          31. Is it possible to combine a background
+          image and CSS3 gradients? Answers: It is possible only when two
+          separate styles are used, "background-image" and "gradient", on an
+          HTML tag. It is possible only when "background-image" is used. It is
+          possible only when layered HTML tags are used, "background-image" and
+          "gradient". It is not possible to combine a background image and CSS3
+          gradients. 
+          
+          32. What will happen if the cursor property value is set to
+          none? Answers: The default cursor will be displayed. No cursor will be
+          displayed. A pointer cursor will be displayed. A text cursor will be
+          displayed. 
+          
+          33. What will be the outcome of given code?
+          div[class^="stronger"] { } { … } Answers: It applies the rule only on
+          divs who belong to a class that begins with "stronger". It applies the
+          rule only on divs of class "stronger". It applies the rule only on
+          divs who belong to a class which end with "stronger". It applies the
+          rule only on divs who belong to a class which does not contain
+          "stronger" in its name. 34. To apply style on every input element
+          except text, which of the following selectors should be used? Answers:
+          input:([!type=’text’]) input:not([type="text"])
+          input:not([type!="text"]) input:([type!=’text’]) 35. For the clear
+          property, which of the following value is not valid? Answers: none
+          left right top 36. Read the following: @page rotated {size: landscape}
+          TABLE {page: rotated; page-break-before: right} What will this code
+          do? Answers: It will put all tables on a right-hand side landscape
+          page. It will rotate the page if the table is positioned at the right
+          side. It will keep the table in the landscape position and rotate the
+          page. None of the above 37. What is the initial value of the opacity
+          property? Answers: 1 normal none 38. State whether the following
+          statement is true or false. If a parent element display property is
+          set to none, its children too will not be rendered. Answers: True
+          False 39. Which of the following filters does SVG support? Answers:
+          SVG supports only CSS filters. SVG supports CSS filters as well as
+          ‘filter’ property of SVG SVG supports only ‘filter’ property of SVG
+          SVG does not supports any filters 40. What will happen if the pause
+          property is used as follows? h2 { pause: 40s 60s } Answers:
+          pause-before will be set to 40 seconds and pause-after will be set to
+          60 seconds. pause-after will be set to 40 seconds and pause-before
+          will be set to 60 seconds. pause-after and pause-before will be set to
+          40 seconds. pause-after and pause-before will be set to 60 seconds.
+          41. Which of the following properties allow percentages in their value
+          fields? Answers: font-size font-variant font-weight line-height 42.
+          Which of the following is not a valid value for the font-stretch
+          property? Answers: condense normal semi-narrower expanded
+          semi-expanded 43. Which of the following styles is valid? Answers:
+          order: "none"; order= "none"; order: none; order= none; None of these.
+          44. Which one of the following is appropriate to mirror/flip text by
+          using CSS3? Answers: .mirror_text{ -moz-transform: scaleX(-1);
+          -o-transform: scaleX(-1); -webkit-transform: scaleX(-1); transform:
+          scaleX(-1); filter: FlipH; -ms-filter: "FlipH"; } .mirror_text{
+          Box-reflect; 20px right; } .mirror_text{ Box-reflect; 20px left; }
+          .mirror_text{ -moz-transform: rotate(-180deg); -webkit-transform:
+          rotate(-180deg); transform: rotate(-180deg); } 45. What is the initial
+          value of the marquee-speed property? Answers: slow normal fast none
+          46. Which of the following will apply a gradient transition to
+          #DemoGradient using CSS3? Answers: @-webkit-keyframes pulse
+          #DemoGradient { 0% { background: -webkit-gradient(linear, left top,
+          left bottom, color-stop(0, rgb(196,222,242)), color-stop(0.5,
+          rgb(242,242,242)), color-stop(1, rgb(240,240,240))); } 50% {
+          background: -webkit-gradient(linear, left top, left bottom,
+          color-stop(0, rgb(222,252,255)), color-stop(0.5, rgb(242,242,242)),
+          color-stop(1, rgb(240,240,240))); } 100% { background:
+          -webkit-gradient(linear, left top, left bottom, color-stop(0,
+          rgb(196,222,242)), color-stop(0.5, rgb(242,242,242)), color-stop(1,
+          rgb(240,240,240))); } } #DemoGradient{ background:
+          -webkit-linear-gradient(#C7D3DC,#5B798E); background:
+          -moz-linear-gradient(#C7D3DC,#5B798E); background:
+          -o-linear-gradient(#C7D3DC,#5B798E); background:
+          linear-gradient(#C7D3DC,#5B798E); -webkit-transition: background 1s
+          ease-out; -moz-transition: background 1s ease-out; -o-transition:
+          background 1s ease-out; transition: background 1s ease-out;
+          background-size:1px 200px; border-radius: 10px; border: 1px solid
+          #839DB0; cursor:pointer; width: 150px; height: 100px; }
+          #DemoGradient:Hover{ background-position:100px; } It is not possible
+          to apply a gradient transition using only CSS3. 47. Using height on
+          transitions is not possible with: Answers: height:auto height:100%
+          height:0 max-height:100% 48. Consider the following problem: When
+          trying to apply a CSS3 style to a label of a checked radio button like
+          this: ….
+          <style>
+            label:checked {
+              font-weight: bold;
+            }
+          </style>
+          ….
+          <input type=""radio"" id=""rad"" name=""radio"" />
+          <label for=""rad"">A Label</label>
+          This does not produce the desired effect. Which of the following
+          snippets will correct issue? Answers: It is not possible to style.
+          <input id=""rad"" type=""radio"" name=""rad"" /><label "rad"
+            >A Label</label
+          >
+          input[type="radio"]:checked+label{ font-weight: bold; }
+          input[type="radio"]:checked@label{ font-weight: bold; } 49. There are
+          various types of input fields in a HTML page. Choose the appropriate
+          CSS3 code which will have an effect on all inputs, except checkbox and
+          radio. Answers: form input:not([type="radio"], [type="checkbox"]) { }
+          input:not([type="radio"]):not([type="checkbox"]) { }
+          input:not([type="radio & checkbox"]) { } input:!([type="radio"]) ,
+          input:!([type="checkbox"]) { } 50. Is it possible to use transition
+          animations with a gradient background? Answers: Yes No 51. What is the
+          difference between float:left; vs display:inline-block; ? Answers:
+          There is no difference, both of them have the same results.
+          display:inline-block; adds whitespace between the elements.
+          float:left; collapses the parent element on itself. None of these. 52.
+          What is the range of values (in decimal notation) that can be
+          specified in the RGB color model? Answers: 0 to 256 0 to 255 -250 to
+          250 -255 to 255 53. Which of the following are not valid values for
+          the target-new property? Answers: window tab none parent current 54.
+          What will be the output of the following rule? em { color:
+          rgba(0,0,255,1) } Answers: Opacity 1 with solid red color Opacity 0
+          with solid blue color Opacity 0 with solid red color Opacity 1 with
+          solid blue color None of these 55. While rendering the following code,
+          what is the role of "src" propery? @font-face { font-family:
+          "calibriforh1"; src: local("calibri"), url(calibri.woff); } h1 {
+          font-family: "calibriforh1", arial, sans-serif; } Answers: It’s for
+          searching the user’s system for a "calibri" font, and if it does not
+          exist, it will load the font from the server instead. It’s for
+          searching the user’s system for a "calibri" font, and if it does not
+          exist, it will load user’s system’s default font instead. It’s for
+          loading the user’s system’s default font. None of these. 56. Which of
+          the following statements is true with regard to CSS3 transitions?
+          Answers: Using CSS transitions will slow down page upload and produce
+          lag. The completion of a CSS transition generates a corresponding DOM
+          event. An event is fired for each property that undergoes a
+          transition. This allows a content developer to perform actions that
+          synchronize with the completion of a transition. CSS transitions allow
+          DOM events in CSS values to occur smoothly over a specified duration.
+          None of these. 57. Given that one div element needs to be hidden and
+          on active state needs to be displayed, what will be the output of the
+          following code? div { display: none; -webkit-transition: opacity 1s
+          ease-out; opacity: 0; } div.active { opacity: 1; display: block; }
+          Answers: On active state the element is displayed. On active state the
+          element’s opacity is changed to 1. On active state the element’s
+          opacity is changed to 0. Nothing will be shown. 58. Which of the given
+          options is/are equivalent to the following rule? DIV { line-height:
+          1.2; font-size: 10pt } Answers: DIV { line-height: 1.2em; font-size:
+          10pt } DIV { line-height: 12em; font-size: 10pt } DIV { line-height:
+          120%; font-size: 10pt } DIV { line-height: 20%; font-size: 10pt } DIV
+          { line-height: 80%; font-size: 10pt } 59. What will happen if the
+          following style declaration is applied to an element? p { margin: 3em
+          2em } Answers: The top and the bottom margins will be 3em and the left
+          and the right margins will be 2em. The top and the bottom margins will
+          be 2em and the left and the right margins will be 3em. The top and the
+          left margins will be 3em and the bottom and the right margins will be
+          2em. The top and the right margins will be 2em and the bottom and the
+          left margins will be 3em.
+        </li>
+      </td>
+    </tr>
+  </body>
+</html>

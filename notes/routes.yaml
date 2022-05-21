@@ -1,4 +1,7 @@
 routes:
+  /democracys-top-ten/:
+    template: page-demten
+    data: page.democracys-top-ten
   /organizations/:
     template: page-about
     data: page.organizations
