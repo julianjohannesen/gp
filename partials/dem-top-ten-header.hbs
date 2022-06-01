@@ -4,7 +4,7 @@
     /**************************************/
     
     .dem-top-ten-header {
-    	display: flex;
+    	  display: flex;
         column-gap: 1.5em;
         justify-content: start;
         align-items: center;
@@ -13,6 +13,28 @@
         padding: clamp(16px, 2em, 40px);
         margin: 1.5rem -40px;
         margin-top: 0;
+    }
+
+    .dem-top-ten-header section {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dem-top-ten-header a {
+      text-decoration: none;
+      border-bottom: none;
+    }
+
+    a.dem-top-ten-bttn {
+      min-width: 30%;
+      max-width: 75%;
+      padding: 0.5em;
+      color: white;
+      background: #333b4b;
+      text-align: center;
+      text-decoration: none;
+      align-self: flex-end;
+      font-style: italic;
     }
     
     .dem-top-ten-header figure img {
@@ -23,20 +45,22 @@
     
     .dem-top-ten-header p {
         color: white;
-    	font-family: 'Istok Web', serif;
+    	  font-family: 'Istok Web', serif;
     }
     
     .dem-top-ten-header p.header {
     	font-size: clamp(2em, 4vw, 5em);
     	line-height: 1.2em;
-        font-weight: bold;
+      font-weight: bold;
     }
     
     .dem-top-ten-header p.subheader {
-        color: hsl(214, 40%, 28%);
-    	font-size: clamp(1.5em, 2vw, 2em);
-    	line-height: 1.2em;
+        color: rgb(215, 54, 64);
+        /*hsl(214, 40%, 28%);*/
+    	  font-size: clamp(1em, 3vw, 3em);
+    	  line-height: 1.2em;
         margin-top: 0;
+        text-shadow: 1px 1px rgb(0, 108, 127);
     }
 </style>
 
@@ -50,8 +74,12 @@
     />
   </figure>
   <section>
+    <a href="/democracys-top-ten/">
     <p class="header">Democracy's Top Ten</p>
-    <p class="subheader">Policies for Free and Fair Elections</p>
-    <!-- <a class="dem-top-10" href="" title="Democracy's Top Ten Page">Click Here</a> -->
+    <p class="subheader">Principles and Policies for Free and Fair Elections</p>
+    </a>
+    {{#is "home"}}
+    <a class="dem-top-ten-bttn" href="/democracys-top-ten/" title="Democracy's Top Ten Page">Click Here</a>
+    {{/is}}
   </section>
 </div>

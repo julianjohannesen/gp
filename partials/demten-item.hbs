@@ -1,0 +1,120 @@
+<style>
+
+    .c-content p {
+        margin-bottom: 1em;
+    }
+
+    section.c-content.flex {
+        background-color: #e6f5ff;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: flex-start;
+        width: 100%;
+        margin-top: 0;
+    }
+    section.c-content.flex div.demten-icon {
+        max-width: 15%;
+        min-width: 10%;
+        width: 15%;
+        height: 300px;
+        background-position: center 2em;
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+
+    section.c-content.flex div.demten-content {
+        
+        columns: 2vw 2;
+        max-width: 90%;
+        min-width: 85%;
+        padding: 1em;
+        width: 85%;
+    }
+    div.demten-content ul li {
+        font-family: Garamond, Georgia, serif;
+    }
+
+         .sdr {
+        background-image: url("../assets/img/dem-top-ten/pillsbury-icons-same-day-registration.png");
+    }
+    .avr {
+        background-image: url("../assets/img/dem-top-ten/pillsbury-icons-auto-register.png");
+    }
+    .mbev {
+        background-image: url("../assets/img/dem-top-ten/pillsbury-icons-vote-by-mail.png");
+    }
+    .vrr {
+        background-image: url("../assets/img/dem-top-ten/pillsbury-icons-past-convicts.png");
+    }
+    .npea {
+        background-image: url("../assets/img/dem-top-ten/pillsbury-icons-nonpartisan.png");
+    }
+
+    .rcv {
+        background-image: url("../assets/img/dem-top-ten/pillsbury-icons-ranked-choice.png");
+    }
+    
+    .npr {
+        background-image: url("../assets/img/dem-top-ten/pillsbury-icons-redistricting.png");
+    }
+    
+    .opr {
+        background-image: url("../assets/img/dem-top-ten/pillsbury-icons-open-primaries.png");
+    }
+    
+    .rmec {
+        background-image: url("../assets/img/dem-top-ten/pillsbury-icons-electoral-college.png");
+    }
+    
+    .cfr {
+        background-image: url("../assets/img/dem-top-ten/pillsbury-icons-finance-reform.png");
+    }
+
+    @media (max-width: 1440px){
+        section.c-content.flex div.demten-content {
+            columns: 1;
+        }
+        section.c-content.flex div.demten-icon {
+            background: none;
+            min-width: 1em;
+            width: 1em;
+        }
+    }
+</style>
+
+<section class='c-content flex'>
+    <div class="demten-icon ">
+
+    </div>
+    <div class="demten-content">
+        {{ content }}
+    </div>
+</section>
+
+<script>
+    const demtenPageClasses = ['sdr','avr','mbev', 'vrr', 'npea', 'rcv', 'npr', 'opr', 'rmec', 'cfr'];
+    const storedPageNames = [
+        'Same Day Registration', 
+        'Automatic Voter Registration', 
+        'Mail Ballot and Early Voting In-person', 
+        'Restoring Voting Rights', 
+        'Nonpartisan Election Administration',
+        'Ranked Choice Voting',
+        'Nonpartisan Redistricting',
+        'Open Primaries and Reform',
+        'Replace or Modify the Electoral College',
+        'Campaign Finance Reform'
+    ];
+(function(){
+    let pageTitle = document.querySelector(".c-post-header__title").textContent;
+    let demTenIcon = document.querySelector(".demten-icon");
+    demtenPageClasses.forEach((pageClass, index) => {
+        pageTitle === storedPageNames[index]
+        ?
+        demTenIcon.classList.add(pageClass)
+        :
+        null;
+    });
+    console.log(pageTitle, demTenIcon)
+})()
+</script>

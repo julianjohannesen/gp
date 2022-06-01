@@ -1,4 +1,7 @@
 routes:
+  /same-day-registration/:
+    template: page-demten-item
+    data: page.same-day-registration
   /democracys-top-ten/:
     template: page-demten
     data: page.democracys-top-ten
@@ -8,16 +11,13 @@ routes:
   /about/:
     template: page-about
     data: page.about-mr-pillsbury
-  #/search/:
-  #  template: page-search
-  #  data: page.search
   /membership/: members/membership
   /signup/: members/signup
   /signin/: members/signin
   /account/: members/account
   /:
-    data: page.home
     template: home
+    data: page.home
 
   /archive/:
     template: archive

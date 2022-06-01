@@ -1,0 +1,83 @@
+<style>
+    /**************************************/
+    /*** Dem Top 10 ***/
+    /**************************************/
+    
+    .dem-top-ten-header-short {
+        margin: 0;
+    }
+
+    .dem-top-ten-header {
+    	display: flex;
+        column-gap: 1.5em;
+        justify-content: start;
+        align-items: center;
+        
+        background-color: #00aac9;
+        padding: clamp(16px, 2em, 40px);
+        margin: 1.5rem -40px;
+        margin-top: 0;
+    }
+    
+    .dem-top-ten-header-short .dem-top-ten-header figure img {
+        width: clamp(75px, 6vw, 120px);
+        margin: 0;
+    }
+    
+    .dem-top-ten-header p {
+        color: white;
+    	  font-family: 'Istok Web', serif;
+    }
+    
+    .dem-top-ten-header p.header {
+    	font-size: clamp(2em, 4vw, 5em);
+    	line-height: 1.2em;
+      font-weight: bold;
+    }
+    
+    .dem-top-ten-header p.subheader {
+        color: rgb(215, 54, 64);
+        /*hsl(214, 40%, 28%);*/
+    	  font-size: clamp(1em, 3vw, 3em);
+    	  line-height: 1.2em;
+        margin-top: 0;
+        text-shadow: 1px 1px rgb(0, 108, 127);
+    }
+
+</style>
+<header class='dem-top-ten-header-short'>
+    <div class="dem-top-ten-header">
+    <figure>
+        <img
+        alt="Ballot Mark"
+        src="../../assets/img/pillsbury-website-topten-html.gif"
+        height="100"
+        width="100"
+        />
+    </figure>
+    <section>
+        <p class="header">Democracy's Top Ten</p>
+    </section>
+    </div>
+    <div class="c-post-header">
+
+    <h1 class='c-post-header__title' style="visibility:hidden; height: 0;">{{ title }}</h1>
+
+    {{#if custom_excerpt}}
+        <p class='c-post-header__excerpt' style="visibility:hidden; height: 0;">{{ custom_excerpt }}</p>
+    {{/if}}
+
+    {{#if feature_image}}
+        <figure class='c-post-media'>
+        <img
+            alt="{{#if feature_image_alt}}{{ feature_image_alt }}{{ else }}{{ title }}{{/if}}"
+            class='c-post-media__image lazyload'
+            data-src='{{ img_url feature_image size='feature-image-large' }}'
+        >
+        {{#if feature_image_caption}}
+            <figcaption class='c-post-media__caption'>{{ feature_image_caption }}</figcaption>
+        {{/if}}
+        </figure>
+    {{/if}}
+    </div>
+</header>

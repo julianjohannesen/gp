@@ -1,11 +1,12 @@
 <style>
     .dem-top-ten-list {
+        align-items: flex-start;
+        color: #414141;
         display: flex;
         flex-flow: row wrap;
+        gap: 1em;
         justify-content: center;
-        align-items: flex-start;
 
-        color: #414141;
     }
     
 
@@ -17,7 +18,7 @@
         background-color: #bce2fe;
         /* Force the row to wrap under a certain size */
         min-width: 250px;
-        width: 50%;
+        width: calc(50% - 1em);
     }
 
     .elections {
@@ -74,31 +75,27 @@
         width: 100%;
     }
 
-    p.description {
-        align-items: flex-start;
-        counter-increment: li;
-        display: flex;
-        font-size: clamp(0.9em, 2vw, 1.25em);
-        font-weight: bold;
-        padding: 1rem;
-    }
-
-    p.description::before {
-        content: counter(li);
-        color: white;
-        font-size: 4em;
-        font-weight: bold;
-        padding-right: 0.3em;
-        margin-top: -22px;
-    }
-
     .top-ten-list-item .header {
         background-color: white;
         color:#414141;
+        counter-increment: li;
         font-size: clamp(1.5em, 2vw, 2em);
         font-weight: bold;
 
         padding: 0.5em;
+    }
+
+     .top-ten-list-item .header::before {
+        content: counter(li);
+        font-weight: bold;
+        border-radius: 50%;
+        background: #b6242a;
+        text-align: center;
+        color: white;
+        padding: 2px 12px;
+        margin: 0.5em;
+        font-size: 30px;
+        vertical-align: top;
     }
 
     .top-ten-list-item .icon {
@@ -129,6 +126,7 @@
         height: 70px;
         justify-content: center;
         padding-right: 5px;
+        text-shadow: 1px 2px #9b9b9b;
         width: 72px;
 
         margin-block-end: 30px;
@@ -136,7 +134,7 @@
     }
 
     .elections p.go {
-        background-color: #baf1fd;
+        background-color: #043b94;
     }
 
     .top-ten-list-item p.go::before {
@@ -168,6 +166,14 @@
         border-right: 30px solid transparent;
         
         border-bottom: 30px solid #fff;
+    }
+
+     p.description {
+        align-items: flex-start;
+        display: flex;
+        font-size: clamp(0.9em, 2vw, 1.25em);
+        font-weight: bold;
+        padding: 1rem;
     }
 
     .sdr .icon {
@@ -206,7 +212,7 @@
         background-image: url("../assets/img/dem-top-ten/pillsbury-icons-finance-reform.png");
     }
 
-    @media (max-width:854px) {
+    @media (max-width:904px) {
         .voting, 
         .elections {
             width: 100%;
@@ -219,13 +225,13 @@
 <section class="dem-top-ten-list">
     <div class="voting">
         <div class="header">
-            <span>1-5</span><br /> 
-            Registration & Voting
+            {{!-- <span>1-5</span><br />  --}}
+            Access to the Ballot
             <span class="arrow-down header-arrow"></span>
         </div>
         <ol class="wrapper">
             <li class="top-ten-list-item sdr one">
-                <div class="icon"><p class="go"><a href="" title="">GO</a></p></div>
+                <div class="icon"><p class="go"><a href="/same-day-registration" title="Same Day Registration">GO</a></p></div>
                 <p class="header">Same Day Registration</p>
                 <p class="description">Allow voters to register or fix a problem with their registration when they vote.</p>
             </li>
@@ -253,8 +259,8 @@
     </div>
     <div class="elections">
         <div class="header">
-            <span>6-10</span><br />
-            Election Methods
+            {{!-- <span>6-10</span><br /> --}}
+            A Meaningful Vote
             <span class="arrow-down header-arrow"></span>
         </div>
         <ol class="wrapper">

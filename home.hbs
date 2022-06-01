@@ -21,12 +21,13 @@
 
         <div class='c-home__content {{#unless feature_image}}c-home__content--only{{/unless}}'>
           <section class='c-content'>
-            {{ content }}
+              {{ content }}
+              
+              {{> welcome-handshake }}
 
-            {{!-- JJ removed on 1-5-22 
-            {{#unless @member}}
-              {{> subscribe-form inputLabel='subscribe-home-intro'}}
-            {{/unless}} --}}
+              {{> meet-my-family }}
+ 
+              {{> dem-top-ten-header }}
           </section>
         </div>
       </div>
@@ -34,25 +35,3 @@
   </div>
 {{/page}}
 
-{{!-- JJ removed on 1-4-22 --}}
-
-{{!-- {{> home/featured-posts }} --}}
-
-{{!-- {{> home/recent-posts }} --}}
-
-{{!-- {{> home/all-posts-link }} --}}
-
-{{!-- {{> subscribe-box }}  --}}
-
- {{!-- <div class="o-grid" >
-    <div class="o-grid">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 2em 2em; grid-template-areas: '. .' '. .'; ">
-        <div class='' style="background-color:blanchedalmond;height: 10em;width: 20em;padding: 2em;border: 1px solid lightslategray;margin: 2.5em;">content</div>
-        <div class='' style="background-color:blanchedalmond;height: 10em;width: 20em;padding: 2em;border: 1px solid lightslategray;margin: 2.5em;">content</div>
-        <div class='' style="background-color:blanchedalmond;height: 10em;width: 20em;padding: 2em;border: 1px solid lightslategray;margin: 2.5em;">content</div>
-        <div class='' style="background-color:blanchedalmond;height: 10em;width: 20em;padding: 2em;border: 1px solid lightslategray;margin: 2.5em;">content</div>
-        
-          
-      </div>
-    </div>
-  </div> --}}

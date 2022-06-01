@@ -11,14 +11,28 @@
       {{!> post-header }}
       {{> dem-top-ten-header }}
 
-      <div class='c-table-of-contents u-hidden'>
+      {{!-- <div class='c-table-of-contents u-hidden'>
         <h2 class='c-table-of-contents__heading'>
           {{t 'Table of Contents' }}
         </h2>
         <div class='c-table-of-contents__content'>
         </div>
-      </div>
+      </div> --}}
 
+      <style>
+        ul.dem-top-ten li {
+          display: flex;
+          font-family: Garamond, Georgia, serif;
+          font-size: 115%;
+          align-items: center;
+          justify-content: flex-start;
+        }
+        ul.dem-top-ten li::before {
+          content: url("/assets/img/red-star.svg");
+          width: 50px;
+          padding: 10px;
+        }
+      </style>
       <section class='c-content'>
         {{ content }}
       </section>

@@ -1,0 +1,31 @@
+{{!-- Use the default template for header and footer  --}}
+{{!< default}}
+
+{{#contentFor 'title'}}{{ meta_title }}{{/contentFor}}
+
+{{#page}}
+
+<div class='o-grid'>
+  <div class='o-grid__col o-grid__col--9-10-m o-grid__col--2-3-l'>
+    <article class='c-{{ post_class }}'>
+      {{!> post-header }}
+      
+      {{> dem-top-ten-header-short }}
+
+      {{!-- <div class='c-table-of-contents u-hidden'>
+        <h2 class='c-table-of-contents__heading'>
+          {{t 'Table of Contents' }}
+        </h2>
+        <div class='c-table-of-contents__content'>
+        </div>
+      </div> --}}
+
+        {{> demten-item }}
+        
+
+      <hr>
+    </article>
+  </div>
+</div>
+
+{{/page}}
