@@ -21,11 +21,19 @@
       </div> --}}
 
         {{> demten-item }}
-        
 
       <hr>
     </article>
   </div>
 </div>
+
+{{!-- In the sidebar, the "dem-top-ten-menu" block appears at the top of the page.
+This page provides the content for that block. This is a confusing thing about the API.
+You wouldn't expect the content here to appear in the sidebar partial. The whole
+reason this was necessary was because I couldn't get '#has tag' to work in the 
+sidebar. --}}
+{{#has tag="#dempolicy"}}
+    {{#contentFor "dem-top-ten-menu"}}{{> dem-top-ten-menu}}{{/contentFor}}
+{{/has}}
 
 {{/page}}

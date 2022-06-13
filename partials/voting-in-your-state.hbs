@@ -1,203 +1,172 @@
-<style>
-    #voting-state {
-        border-top: 1px solid lightgray;
-        padding:2em;
+<div id="voting-state" class='sidebar-module-wrapper'>
+    <section class="voting-state">
 
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        flex-flow:row wrap;
-        gap:1em;
-    }
-    #voting-state img {
-        max-width: 235px;
-    }
-    #voting-state .heading-wrap {
-        display:flex;
-        flex-flow: column wrap;
-        justify-content: flex-start;
-        align-items: flex-start;
+        <img 
+            src="/content/images/2022/05/usmap.webp"
+            width="235"
+            height="241"
+            alt="voting tools logo"
+        />
+        <div class="heading-wrap">
+            <h2 class="c-subscribe__heading u-type-500 u-mb-8">Voting in Your State</h2>
+            <p class='u-mb-16'>{{t 'Learn about voting in your state.' }}</p>
+            <select class="state-select">
+            
+                <option rel="alabama" value="https://www.nonprofitvote.org/states/alabama/" >Alabama</option>
 
-        margin: auto;
-    }
-    .learn-button {
-        width:100%;
+            
+                <option rel="alaska" value="https://www.nonprofitvote.org/states/alaska/" >Alaska</option>
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    
-    }
+            
+                <option rel="arizona" value="https://www.nonprofitvote.org/states/arizona/" >Arizona</option>
 
-</style>
+            
+                <option rel="arkansas" value="https://www.nonprofitvote.org/states/arkansas/" >Arkansas</option>
 
-{{!-- The title area  --}}
-<div id="voting-state" class='o-grid'>
-    <img 
-        src="/content/images/2022/05/usmap.webp"
-        width="235"
-        height="241"
-        alt="voting tools logo"
-    />
-    <div class="heading-wrap">
-        <h2 class="c-subscribe__heading u-type-500 u-mb-8">Voting in Your State</h2>
-        <p class='u-mb-16'>{{t 'Learn about voting in your state.' }}</p>
-        <select class="state-select">
-        
-            <option rel="alabama" value="https://www.nonprofitvote.org/states/alabama/" >Alabama</option>
+            
+                <option rel="california" value="https://www.nonprofitvote.org/states/california/" >California</option>
 
-        
-            <option rel="alaska" value="https://www.nonprofitvote.org/states/alaska/" >Alaska</option>
+            
+                <option rel="colorado" value="https://www.nonprofitvote.org/states/colorado/" >Colorado</option>
 
-        
-            <option rel="arizona" value="https://www.nonprofitvote.org/states/arizona/" >Arizona</option>
+            
+                <option rel="connecticut" value="https://www.nonprofitvote.org/states/connecticut/" >Connecticut</option>
 
-        
-            <option rel="arkansas" value="https://www.nonprofitvote.org/states/arkansas/" >Arkansas</option>
+            
+                <option rel="delaware" value="https://www.nonprofitvote.org/states/delaware/" >Delaware</option>
 
-        
-            <option rel="california" value="https://www.nonprofitvote.org/states/california/" >California</option>
+            
+                <option rel="district-of-columbia" value="https://www.nonprofitvote.org/states/district-of-columbia/" >District of Columbia</option>
 
-        
-            <option rel="colorado" value="https://www.nonprofitvote.org/states/colorado/" >Colorado</option>
+            
+                <option rel="florida" value="https://www.nonprofitvote.org/states/florida/" >Florida</option>
 
-        
-            <option rel="connecticut" value="https://www.nonprofitvote.org/states/connecticut/" >Connecticut</option>
+            
+                <option rel="georgia" value="https://www.nonprofitvote.org/states/georgia/" >Georgia</option>
 
-        
-            <option rel="delaware" value="https://www.nonprofitvote.org/states/delaware/" >Delaware</option>
+            
+                <option rel="hawaii" value="https://www.nonprofitvote.org/states/hawaii/" >Hawaii</option>
 
-        
-            <option rel="district-of-columbia" value="https://www.nonprofitvote.org/states/district-of-columbia/" >District of Columbia</option>
+            
+                <option rel="idaho" value="https://www.nonprofitvote.org/states/idaho/" >Idaho</option>
 
-        
-            <option rel="florida" value="https://www.nonprofitvote.org/states/florida/" >Florida</option>
+            
+                <option rel="illinois" value="https://www.nonprofitvote.org/states/illinois/" >Illinois</option>
 
-        
-            <option rel="georgia" value="https://www.nonprofitvote.org/states/georgia/" >Georgia</option>
+            
+                <option rel="indiana" value="https://www.nonprofitvote.org/states/indiana/" >Indiana</option>
 
-        
-            <option rel="hawaii" value="https://www.nonprofitvote.org/states/hawaii/" >Hawaii</option>
+            
+                <option rel="iowa" value="https://www.nonprofitvote.org/states/iowa/" >Iowa</option>
 
-        
-            <option rel="idaho" value="https://www.nonprofitvote.org/states/idaho/" >Idaho</option>
+            
+                <option rel="kansas" value="https://www.nonprofitvote.org/states/kansas/" >Kansas</option>
 
-        
-            <option rel="illinois" value="https://www.nonprofitvote.org/states/illinois/" >Illinois</option>
+            
+                <option rel="kentucky" value="https://www.nonprofitvote.org/states/kentucky/" >Kentucky</option>
 
-        
-            <option rel="indiana" value="https://www.nonprofitvote.org/states/indiana/" >Indiana</option>
+            
+                <option rel="louisiana" value="https://www.nonprofitvote.org/states/louisiana/" >Louisiana</option>
 
-        
-            <option rel="iowa" value="https://www.nonprofitvote.org/states/iowa/" >Iowa</option>
+            
+                <option rel="maine" value="https://www.nonprofitvote.org/states/maine/" >Maine</option>
 
-        
-            <option rel="kansas" value="https://www.nonprofitvote.org/states/kansas/" >Kansas</option>
+            
+                <option rel="maryland" value="https://www.nonprofitvote.org/states/maryland/" >Maryland</option>
 
-        
-            <option rel="kentucky" value="https://www.nonprofitvote.org/states/kentucky/" >Kentucky</option>
+            
+                <option rel="massachusetts" value="https://www.nonprofitvote.org/states/massachusetts/" >Massachusetts</option>
 
-        
-            <option rel="louisiana" value="https://www.nonprofitvote.org/states/louisiana/" >Louisiana</option>
+            
+                <option rel="michigan" value="https://www.nonprofitvote.org/states/michigan/" >Michigan</option>
 
-        
-            <option rel="maine" value="https://www.nonprofitvote.org/states/maine/" >Maine</option>
+            
+                <option rel="minnesota" value="https://www.nonprofitvote.org/states/minnesota/" >Minnesota</option>
 
-        
-            <option rel="maryland" value="https://www.nonprofitvote.org/states/maryland/" >Maryland</option>
+            
+                <option rel="mississippi" value="https://www.nonprofitvote.org/states/mississippi/" >Mississippi</option>
 
-        
-            <option rel="massachusetts" value="https://www.nonprofitvote.org/states/massachusetts/" >Massachusetts</option>
+            
+                <option rel="missouri" value="https://www.nonprofitvote.org/states/missouri/" >Missouri</option>
 
-        
-            <option rel="michigan" value="https://www.nonprofitvote.org/states/michigan/" >Michigan</option>
+            
+                <option rel="montana" value="https://www.nonprofitvote.org/states/montana/" >Montana</option>
 
-        
-            <option rel="minnesota" value="https://www.nonprofitvote.org/states/minnesota/" >Minnesota</option>
+            
+                <option rel="nebraska" value="https://www.nonprofitvote.org/states/nebraska/" >Nebraska</option>
 
-        
-            <option rel="mississippi" value="https://www.nonprofitvote.org/states/mississippi/" >Mississippi</option>
+            
+                <option rel="nevada" value="https://www.nonprofitvote.org/states/nevada/" >Nevada</option>
 
-        
-            <option rel="missouri" value="https://www.nonprofitvote.org/states/missouri/" >Missouri</option>
+            
+                <option rel="new-hampshire" value="https://www.nonprofitvote.org/states/new-hampshire/" >New Hampshire</option>
 
-        
-            <option rel="montana" value="https://www.nonprofitvote.org/states/montana/" >Montana</option>
+            
+                <option rel="new-jersey" value="https://www.nonprofitvote.org/states/new-jersey/" >New Jersey</option>
 
-        
-            <option rel="nebraska" value="https://www.nonprofitvote.org/states/nebraska/" >Nebraska</option>
+            
+                <option rel="new-mexico" value="https://www.nonprofitvote.org/states/new-mexico/" >New Mexico</option>
 
-        
-            <option rel="nevada" value="https://www.nonprofitvote.org/states/nevada/" >Nevada</option>
+            
+                <option rel="new-york" value="https://www.nonprofitvote.org/states/new-york/" >New York</option>
 
-        
-            <option rel="new-hampshire" value="https://www.nonprofitvote.org/states/new-hampshire/" >New Hampshire</option>
+            
+                <option rel="north-carolina" value="https://www.nonprofitvote.org/states/north-carolina/" >North Carolina</option>
 
-        
-            <option rel="new-jersey" value="https://www.nonprofitvote.org/states/new-jersey/" >New Jersey</option>
+            
+                <option rel="north-dakota" value="https://www.nonprofitvote.org/states/north-dakota/" >North Dakota</option>
 
-        
-            <option rel="new-mexico" value="https://www.nonprofitvote.org/states/new-mexico/" >New Mexico</option>
+            
+                <option rel="ohio" value="https://www.nonprofitvote.org/states/ohio/" >Ohio</option>
 
-        
-            <option rel="new-york" value="https://www.nonprofitvote.org/states/new-york/" >New York</option>
+            
+                <option rel="oklahoma" value="https://www.nonprofitvote.org/states/oklahoma/" >Oklahoma</option>
 
-        
-            <option rel="north-carolina" value="https://www.nonprofitvote.org/states/north-carolina/" >North Carolina</option>
+            
+                <option rel="oregon" value="https://www.nonprofitvote.org/states/oregon/" >Oregon</option>
 
-        
-            <option rel="north-dakota" value="https://www.nonprofitvote.org/states/north-dakota/" >North Dakota</option>
+            
+                <option rel="pennsylvania" value="https://www.nonprofitvote.org/states/pennsylvania/" >Pennsylvania</option>
 
-        
-            <option rel="ohio" value="https://www.nonprofitvote.org/states/ohio/" >Ohio</option>
+            
+                <option rel="rhode-island" value="https://www.nonprofitvote.org/states/rhode-island/" >Rhode Island</option>
 
-        
-            <option rel="oklahoma" value="https://www.nonprofitvote.org/states/oklahoma/" >Oklahoma</option>
+            
+                <option rel="south-carolina" value="https://www.nonprofitvote.org/states/south-carolina/" >South Carolina</option>
 
-        
-            <option rel="oregon" value="https://www.nonprofitvote.org/states/oregon/" >Oregon</option>
+            
+                <option rel="south-dakota" value="https://www.nonprofitvote.org/states/south-dakota/" >South Dakota</option>
 
-        
-            <option rel="pennsylvania" value="https://www.nonprofitvote.org/states/pennsylvania/" >Pennsylvania</option>
+            
+                <option rel="tennessee" value="https://www.nonprofitvote.org/states/tennessee/" >Tennessee</option>
 
-        
-            <option rel="rhode-island" value="https://www.nonprofitvote.org/states/rhode-island/" >Rhode Island</option>
+            
+                <option rel="texas" value="https://www.nonprofitvote.org/states/texas/" >Texas</option>
 
-        
-            <option rel="south-carolina" value="https://www.nonprofitvote.org/states/south-carolina/" >South Carolina</option>
+            
+                <option rel="utah" value="https://www.nonprofitvote.org/states/utah/" >Utah</option>
 
-        
-            <option rel="south-dakota" value="https://www.nonprofitvote.org/states/south-dakota/" >South Dakota</option>
+            
+                <option rel="vermont" value="https://www.nonprofitvote.org/states/vermont/" >Vermont</option>
 
-        
-            <option rel="tennessee" value="https://www.nonprofitvote.org/states/tennessee/" >Tennessee</option>
+            
+                <option rel="virginia" value="https://www.nonprofitvote.org/states/virginia/" >Virginia</option>
 
-        
-            <option rel="texas" value="https://www.nonprofitvote.org/states/texas/" >Texas</option>
+            
+                <option rel="washington" value="https://www.nonprofitvote.org/states/washington/" >Washington</option>
 
-        
-            <option rel="utah" value="https://www.nonprofitvote.org/states/utah/" >Utah</option>
+            
+                <option rel="west-virginia" value="https://www.nonprofitvote.org/states/west-virginia/" >West Virginia</option>
 
-        
-            <option rel="vermont" value="https://www.nonprofitvote.org/states/vermont/" >Vermont</option>
+            
+                <option rel="wisconsin" value="https://www.nonprofitvote.org/states/wisconsin/" >Wisconsin</option>
 
-        
-            <option rel="virginia" value="https://www.nonprofitvote.org/states/virginia/" >Virginia</option>
+            
+                <option rel="wyoming" value="https://www.nonprofitvote.org/states/wyoming/" >Wyoming</option>
 
-        
-            <option rel="washington" value="https://www.nonprofitvote.org/states/washington/" >Washington</option>
-
-        
-            <option rel="west-virginia" value="https://www.nonprofitvote.org/states/west-virginia/" >West Virginia</option>
-
-        
-            <option rel="wisconsin" value="https://www.nonprofitvote.org/states/wisconsin/" >Wisconsin</option>
-
-        
-            <option rel="wyoming" value="https://www.nonprofitvote.org/states/wyoming/" >Wyoming</option>
-
-            </select>
-    </div>
+                </select>
+        </div>
+    </section>
 </div>
 
 <script>

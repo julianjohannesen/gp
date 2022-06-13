@@ -1,5 +1,50 @@
+<style>
+    div.sidebar-module-wrapper {
+        border-top: 1px solid lightgray;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 1em 1.5em !important;
+    }
+
+    div.sidebar-module-wrapper section {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 1em;
+        justify-content: center;
+        align-items: center;
+        padding: clamp(1rem, 2vw, 2rem);
+    }
+
+    div.sidebar-module-wrapper img {
+        max-width: 235px;
+        min-width: 135px;
+    }
+
+    div.sidebar-module-wrapper .heading-wrap {
+        display:flex;
+        flex-flow: column wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        margin: auto;
+    }
+
+    .learn-button {
+        width:100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+    }
+</style>
+
 <aside class="sidebar">
 
+    {{{block "dem-top-ten-menu"}}}
+    
     {{> subscribe-box-side }}
 
     {{> voting-tools }}
