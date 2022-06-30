@@ -1,13 +1,9 @@
 <style>
-    /**************************************/
-    /*** Dem Top 10 ***/
-    /**************************************/
-    
     .dem-top-ten-header {
     	  display: flex;
         column-gap: 1.5em;
         justify-content: start;
-        align-items: center;
+        align-items: flex-start;
         
         background-color: #00aac9;
         padding: clamp(16px, 2em, 40px);
@@ -40,7 +36,12 @@
     .dem-top-ten-header figure img {
         min-width: 125px;
         max-width: 450px;
+        width: 200px;
         margin: 0;
+    }
+
+    .dem-top-ten-header figure img.large {
+      width: 265px;
     }
     
     .dem-top-ten-header p {
@@ -55,13 +56,18 @@
     }
     
     .dem-top-ten-header p.subheader {
-        color: #951d25;
+        color: hsl(0deg 100% 15%);;
         /*hsl(214, 40%, 28%);*/
     	  font-size: clamp(1em, 3vw, 3em);
         font-weight: 600;
     	  line-height: 1.2em;
         margin-top: 0;
-        text-shadow: 1px 1px rgb(0, 108, 127);
+        
+    }
+    @media (max-width: 46em) {
+      .dem-top-ten-header figure img {
+        width: 125px;
+      }
     }
 </style>
 
@@ -69,6 +75,7 @@
   <figure>
     <img
       alt="Ballot Mark"
+      class= "{{#is "home"}}large{{/is}}"
       src="../../assets/img/pillsbury-website-topten-html.gif"
       height="100"
       width="100"

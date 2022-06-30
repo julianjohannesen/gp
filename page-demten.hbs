@@ -24,14 +24,21 @@
           display: flex;
           font-family: Garamond, Georgia, serif;
           font-size: 115%;
-          align-items: center;
+          align-items: flex-start;
           justify-content: flex-start;
         }
         ul.dem-top-ten li::before {
-          content: url("/assets/img/red-star.webp");
-          height: 70px;
-          width: 70px;
+          content: "";
+          background: url(/assets/img/red-star.svg);
+          background-size: 35px 35px;
+          background-position: left center;
+          background-repeat: no-repeat;
+          height: 40px;
+          margin-right: 0.5em;
           padding: 10px;
+          width: 40px;
+          min-width: 40px;
+          
         }
       </style>
       <section class='c-content'>

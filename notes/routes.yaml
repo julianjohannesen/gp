@@ -1,4 +1,7 @@
 routes:
+  /automatic-voter-registration/:
+    template: page-demten-item
+    data: page.automatic-voter-registration
   /same-day-registration/:
     template: page-demten-item
     data: page.same-day-registration

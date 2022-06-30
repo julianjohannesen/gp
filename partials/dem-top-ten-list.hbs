@@ -46,7 +46,6 @@
         padding: 0.5em;
         position: relative;
         text-align: center;
-
     }
 
     .voting .header span,
@@ -71,32 +70,45 @@
 
     }
 
-    .top-ten-list-item p {
+    /*.top-ten-list-item p {
         width: 100%;
-    }
+    }*/
 
-    .top-ten-list-item .header {
+    .top-ten-list-item p.header {
         background-color: white;
         color:#414141;
         counter-increment: li;
         font-size: clamp(1.5em, 2vw, 2em);
         font-weight: bold;
 
-        padding: 0.5em;
+        border-bottom: 2px solid gray;
+        margin: 1rem 2rem 0;
+        padding: .5rem 0 0;
+        text-align: left;
     }
 
+    /*
      .top-ten-list-item .header::before {
-        content: counter(li);
+        content:''; was counter(li)
         font-weight: bold;
+        border: 1rem solid #b6242a;
         border-radius: 50%;
         background: #b6242a;
         text-align: center;
         color: white;
         padding: 2px 12px;
-        margin: 0.5em;
-        font-size: 30px;
+        margin-right: 0.75rem;
+        font-size: 0px;
         vertical-align: top;
     }
+    */
+
+    /*
+    needed to target first child when using numbers
+    .top-ten-list-item:first-child .header::before {
+        padding: 2px 14px; 
+        }
+    */
 
     .top-ten-list-item .icon {
         background: #043b94 no-repeat center/100% scroll content-box;
@@ -168,12 +180,27 @@
         border-bottom: 30px solid #fff;
     }
 
+    li.top-ten-list-item p.header::before {
+        content: '';
+        font-size: 0;
+        border: 17px solid transparent;
+        border-left-color: #b6242a;
+        vertical-align: bottom;
+        margin: 0px -10px 1px;
+        margin-left: 1px;
+    }
+
+    .icon + div {
+        background-color: white;
+    }
+
      p.description {
         align-items: flex-start;
+        background-color: white;
         display: flex;
         font-size: clamp(0.9em, 2vw, 1.25em);
-        font-weight: bold;
-        padding: 1rem;
+        font-weight: normal;
+        padding: 1rem 2rem 2rem;
     }
 
     .sdr .icon {
@@ -232,28 +259,35 @@
         <ol class="wrapper">
             <li class="top-ten-list-item sdr one">
                 <div class="icon"><p class="go"><a href="/same-day-registration" title="Same Day Registration">GO</a></p></div>
-                <p class="header">Same Day Registration</p>
-                <p class="description">Allow voters to register or fix a problem with their registration when they vote.</p>
+                <div>
+                    <p class="header">Same Day Registration</p>
+                    <p class="description">Allow voters to register or fix a problem with their registration when they vote.</p>
+                </div>
+            
             </li>
             <li class="top-ten-list-item avr two">
-                <div class="icon"><p class="go"><a href="" title="">GO</a></p></div>
-                <p class="header">Automatic Voter Registration</p>
+                <div class="icon"><p class="go"><a href="/automatic-voter-registration" title="">GO</a></p></div><div>
+                     <p class="header">Automatic Voter Registration</p>
                 <p class="description">Automaticaly register people to vote or update their registration at motor vehicles and other government agencies unless the person opts out.</p>
+            </div>
             </li>
             <li class="top-ten-list-item mb-evip three">
-                <div class="icon"><p class="go"><a href="" title="">GO</a></p></div>
-                <p class="header">Mail Ballots and Early Voting In-person</p>
+                <div class="icon"><p class="go"><a href="" title="">GO</a></p></div><div>
+                <p class="header">Mail Ballots and Early Voting in Person</p>
                 <p class="description">Make it easy to receive and return a mail ballot and to vote early in person.</p>
+            </div>
             </li>
             <li class="top-ten-list-item vrr four">
-                <div class="icon"><p class="go"><a href="" title="">GO</a></p></div>
+                <div class="icon"><p class="go"><a href="" title="">GO</a></p></div><div>
                 <p class="header">Restore Voting Rights for People with Past Convictions</p>
                 <p class="description">Restore the vote for all persons released from prison, including those out on probation or parole.</p>
+            </div>
             </li>
             <li class="top-ten-list-item npea five">
-                <div class="icon"><p class="go"><a href="" title="">GO</a></p></div>
-                <p class="header">Non-Partisan Election Administration</p>
-                <p class="description">Ensure a non-partisan and impartial process to run elections and count the votes</p>
+                <div class="icon"><p class="go"><a href="" title="">GO</a></p></div><div>
+                    <p class="header">Nonpartisan Election Administration</p>
+                    <p class="description">Ensure a nonpartisan and impartial process to run elections and count the votes</p>
+                </div>
             </li>
         </ol>
     </div>
@@ -265,31 +299,31 @@
         </div>
         <ol class="wrapper">
             <li class="top-ten-list-item rcv six">
-                <div class="icon"><p class="go"><a href="" title="">GO</a></p></div>
+                <div class="icon"><p class="go"><a href="" title="">GO</a></p></div><div>
                 <p class="header">Ranked Choice Voting</p>
                 <p class="description">Ensure election winners have majority support. Give voters more choice. Allow more than two candidates to run without fear of splitting the vote.</p>
-            </li>
+            </div></li>
             <li class="top-ten-list-item npr seven">
-                <div class="icon"><p class="go"><a href="" title="">GO</a></p></div>
+                <div class="icon"><p class="go"><a href="" title="">GO</a></p></div><div>
                 <p class="header">Nonpartisan Redistricting</p>
-                <p class="description">Nonpartisan independent redistricting commissions, or other methods with fair redistricting criteria and that prevent partisan or racial gerrymandering</p>
-            </li>
+                <p class="description">Create nonpartisan, independent redistricting commissions, or other methods with fair redistricting criteria and that prevent partisan or racial gerrymandering</p>
+            </div></li>
             <li class="top-ten-list-item opr eight">
-                <div class="icon"><p class="go"><a href="" title="">GO</a></p></div>
+                <div class="icon"><p class="go"><a href="" title="">GO</a></p></div><div>
                 <p class="header">Open Primaries and Reform</p>
-                <p class="description">Allow all voters to vote in the primary that determines who is on the ballot for the general election. In an open primary or nonpartisan primary</p>
-            </li>
+                <p class="description">Allow all voters to vote in the primary that determines who is on the ballot for the general election. In an open or nonpartisan primary</p>
+            </div></li>
             <li class="top-ten-list-item rmec nine">
-                <div class="icon"><p class="go"><a href="" title="">GO</a></p></div>
+                <div class="icon"><p class="go"><a href="" title="">GO</a></p></div><div>
                 <p class="header">Replace or Modify the Electoral College</p>
-                <p class="description">Move to a national popular vote or divide each state’s electors on a proportional basis
+                <p class="description">Move to a national popular vote or consider dividing each state’s electors on a proportional basis
 </p>
-            </li>
+            </div></li>
             <li class="top-ten-list-item cfr ten">
-                <div class="icon"><p class="go"><a href="" title="">GO</a></p></div>
+                <div class="icon"><p class="go"><a href="" title="">GO</a></p></div><div>
                 <p class="header">Campaign Finance Reform</p>
-                <p class="description">Policies that require full transparency of all donations and outside expenditures, and support public funding to match or encourage small donations</p>
-            </li>
+                <p class="description">Adopt small donor-driven, public funding of elections. Require full disclosure of all donations and outside expenditures not currently disclosed.</p>
+            </div></li>
         </ol>
     </div>
 </section>
