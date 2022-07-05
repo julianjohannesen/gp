@@ -87,9 +87,7 @@ footer {
   justify-content: flex-start;
 }
     
-    .page-same-day-registration .sidebar .o-grid {
-        padding-left: 24px;
-    }
+
 
 /* Back to top link inserted into footer  */
 
@@ -695,6 +693,9 @@ figure.about-image figcaption {
 .page-democracys-top-ten p.read-more {
   margin-top: 1rem;
 }
-    
    
+.tag-hash-dempolicy #benefits+ul li {
+    font-family: Garamond, Georgia, serif;
+    font-size: 20px;
+    }
     
