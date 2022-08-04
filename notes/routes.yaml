@@ -1,4 +1,10 @@
 routes:
+  /non-partisan-election-administration/:
+    template: page-demten-item
+    data: page.non-partisan-election-administration
+  /mail-ballots-and-early-voting-in-person/:
+    template: page-demten-item
+    data: page.mail-ballots-and-early-voting-in-person
   /automatic-voter-registration/:
     template: page-demten-item
     data: page.automatic-voter-registration
