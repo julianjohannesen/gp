@@ -1,4 +1,7 @@
 routes:
+  /voting-rights-restoration/:
+    template: page-demten-item
+    data: page.voting-rights-restoration
   /non-partisan-election-administration/:
     template: page-demten-item
     data: page.non-partisan-election-administration

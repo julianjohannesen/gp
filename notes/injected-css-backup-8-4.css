@@ -1,0 +1,719 @@
+<style>
+/**************************/
+/* GLOBAL                 */
+/**************************/
+
+:root {
+  /* custom hero background color */
+  --background-hero: #fbfbfb;
+}
+    
+    .c-content p a, .c-content li a {
+        color: blue !important;
+    }
+
+img {
+  width: 100%;
+  height: auto;
+}
+    
+    .c-content h4 {
+        font-size: 20px;
+        line-height: 24px;
+    }
+    
+.padding-1em {
+    padding: 1em !important;
+    }
+
+/**************************/
+/* DEFAULT SITE TEMPLATE  */
+/**************************/
+
+div.c-site-container {
+  flex-flow: row wrap;
+  justify-content: center;
+  min-width: 370px;
+  /*max-width: 1200px;*/
+  margin: 0 auto;
+  /*gap: 1rem;*/
+}
+
+header,
+footer {
+  /* relying on 'justify-content: center' to center the site, so must explicitly set header and footer width to 100% */
+  width: 100%;
+}
+
+/* Two column layout */
+
+.twoCol {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+@media (max-width: 46em) {
+  .twoCol {
+    display: block;
+    width: 100%;
+  }
+  .twoCol > main.o-wrapper,
+  .twoCol > aside.sidebar {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+  .sidebar div.is-membership {
+    width: 100%;
+  }
+}
+
+.twoCol main.o-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  /* max-width: 66%; */
+
+  flex: 2 1 auto;
+}
+
+@media (min-width: 46.01em) {
+  .twoCol main.o-wrapper {
+    max-width: 66%;
+  }
+}
+
+.o-grid {
+  max-width: 100%;
+  margin: 0;
+  justify-content: flex-start;
+}
+    
+
+
+/* Back to top link inserted into footer  */
+
+div.scrollToTop {
+  position: relative;
+}
+
+div.scrollToTop button {
+  align-items: center;
+  background: var(--background-hero);
+  border: 3px solid #939ba8;
+  bottom: 100px;
+  border-radius: 50%;
+  box-shadow: rgb(0 0 0 / 24%) 0px 8px 16px -2px;
+  color: #939ba8;
+  display: flex;
+  font-size: 3em;
+  height: 60px;
+  justify-content: center;
+  opacity: 0;
+  right: 32px;
+  padding: 0em;
+  pointer-events: all;
+  position: fixed;
+  text-decoration: none;
+  transition: opacity 1s ease;
+  width: 60px;
+  z-index: 100;
+}
+
+.scrollToTop button.fade {
+  opacity: 1;
+}
+    
+p.read-more a {
+	border-radius: 5px;
+    box-shadow: rgb(0 0 0 / 24%) 0px 8px 16px -2px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 18px;
+    background-color: rgba(209, 35, 42, 1);
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+p.read-more a:hover {
+  color: #ffffff;
+  background-color: rgba(174, 30, 34, 1);
+  text-decoration: none;
+}
+
+/**************************/
+/* HEADER                 */
+/**************************/
+
+/* header background color and padding */
+header.c-header {
+  background-color: #223959;
+  padding: 20px 0;
+}
+
+/* padding above and below the nav bar */
+header div.o-grid {
+  padding: 20px 16px 40px;
+}
+
+/* align nav bar items vertically to the top of the nav bar */
+header div.o-grid div.c-header__inner {
+  align-items: start;
+}
+
+/* increase logo image size */
+img.c-logo__img {
+  max-height: 96px;
+}
+
+a.c-logo__link,
+a.c-logo__link:hover {
+  color: white;
+  font-size: 2.5em;
+}
+
+div.c-nav-wrap {
+  background-color: #223959;
+}
+
+/* Hamburger Menu  */
+
+span.c-nav-toggle__icon,
+.c-nav-toggle--close .c-nav-toggle__icon::before,
+.c-nav-toggle--close .c-nav-toggle__icon::after {
+  background-color: white;
+}
+
+a.c-nav__link {
+  color: white;
+}
+
+a.c-nav__link:hover:after,
+a.c-nav__link:active:after,
+a.c-nav__link:focus:after {
+  background-color: white;
+}
+
+a.c-nav__link--current:after {
+  background-color: white;
+}
+
+/**************************/
+/* PAGE & POST TEMPLATES  */
+/**************************/
+
+/* Move the page title down a bit from the header  */
+
+header.c-post-header {
+  padding-top: 2em;
+}
+
+.c-post {
+  margin: 0;
+  max-width: 100%; /*was none*/
+}
+
+.c-content {
+  display: block;
+}
+    
+.c-content ul {
+    font-size: 20px;
+    line-height: 28px;
+ }
+
+.c-archive__description {
+  font-size: 18px;
+  line-height: 22px;
+  margin-top: 8px;
+}
+
+/* Use serif type for page & post body text */
+
+.c-content p {
+  font-family: Garamond, Georgia, serif;
+  font-size: 20px;
+}
+
+/* Underline section titles in articles */
+
+article.page h2 {
+  border-bottom: solid 1px #951d25;
+  padding-bottom: 0.15em;
+  margin-bottom: 0.35em;
+}
+
+/* Call out card css */
+
+.kg-callout-card-blue {
+  background: rgba(33, 172, 232, 0.12);
+}
+
+.kg-callout-card {
+  display: flex;
+  padding: 20px 28px;
+  background: #f1f3f4;
+  border-radius: 3px;
+}
+
+
+/**************************/
+/* SIDEBAR                */
+/**************************/
+
+.sidebar {
+  background-color: #fff;
+  display: flex;
+  flex: 1 0 auto; /* Grow equally, don't shrink, base size on auto */
+  flex-flow: row wrap;
+  align-content: flex-start;
+  /* max-width: 33%; */
+  margin: 0;
+  padding: 0;
+    
+    border-left: 1px solid lightgray;
+}
+
+@media (min-width: 46.1em) {
+  .sidebar {
+    width: 33%;
+  }
+}
+
+.sidebar > section,
+.sidebar > .o-grid,
+.sidebar .is-membership.o-grid,
+.sidebar .is-membership.o-grid .o-grid__col {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.o-grid__col--2-3-s,
+.o-grid__col--2-3-m,
+.o-grid__col--2-3-l {
+  width: 100%;
+}
+
+.sidebar div.c-title-bar {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0;
+  margin-top: 2em;
+}
+
+.sidebar .c-title-bar__divider {
+  width: 100%;
+  margin-left: 1em;
+}
+
+.sidebar .c-post-card {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 10px;
+  grid-auto-columns: 1fr;
+  grid-template-areas: "content content media";
+}
+    
+    .sidebar section.c-subscribe {
+        display:flex;
+        flex-wrap: wrap;
+    	background-color: #fff;
+        justify-content: center;
+        padding: clamp(1rem, 2vw, 2rem);
+        gap:1em;
+    }
+
+/* Subscribe-button layout switched to vertical at all screen sizes */
+
+.sidebar .c-form-group {
+  flex-direction: column;
+}
+
+.sidebar .c-form-group__input {
+  margin-bottom: 16px;
+}
+
+.sidebar .c-form-group__btn {
+  width: 100%;
+  margin-left: 0;
+}
+    
+    /* sidebar subscribe to the newsletter icon */
+    .sidebar .c-subscribe__icon {
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        padding: 0;
+    position: relative;
+    top: unset;
+    right: unset;
+    min-width: 236px;
+    
+}
+
+/**************************/
+/* HOMEPAGE  */
+/**************************/
+
+@media (min-width: 64em) {
+  /*.c-home {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "media content content";
+  }*/
+}
+    
+
+.c-home {
+	background-color: white;
+}
+    
+    section.c-content div.welcome-module {
+    	margin: auto -40px;
+        position: relative;
+    }
+    
+section.c-content div.welcome-module p {
+	color: hsl(214, 40%, 28%);
+    font-family: 'Istok Web', serif;
+    font-size: clamp(24px, 3vw, 48px);
+    line-height: clamp(34px, 1.4em, 54px);	 
+	text-align:center;
+}
+    
+    p.quote:before {
+    	content: "\201C";
+        font-size: 2em;
+        vertical-align: bottom;
+        line-height: 0.5em;
+        
+    }
+    
+    p.quote:after {
+    	content: "\201D";
+        font-size: 2em;
+        vertical-align: bottom;
+        line-height: 0.5em;
+    }
+    
+    section.c-content div.welcome-module p.header {
+    	position: absolute;
+    }
+    
+    section.c-content div.welcome-module p.subheader {
+     	font-size: clamp(18px, 2vw, 44px);
+        font-weight: bold;
+    	line-height: clamp(24px, 1.4em, 50px); 
+    }
+    
+    section.c-content div.welcome-module figure  {
+        display: flex;
+        align-items: stretch;
+        margin: auto -40px;
+    }
+    
+    section.c-content div.welcome-module figure img {
+    	margin-top: 5em;
+    }
+    
+    /**************************************/
+    /*** Meet the Family and Dem Top 10 ***/
+    /**************************************/
+    
+    section.c-content div.meet-family
+    /*,section.c-content div.dem-top-10*/ {
+    	display: flex;
+        column-gap: 1.5em;
+        /*grid-template-areas: "pic text text";*/
+        justify-content: start;
+        
+        background-color: hsl(214, 40%, 28%);
+        padding: clamp(16px, 2em, 40px);
+        margin: 1.5rem -40px;
+        margin-top: 2.5rem;
+    }
+    
+     /*section.c-content div.dem-top-10 {
+        background-color: #00aac9;
+    }*/
+    
+    section.c-content div.meet-family figure,
+    section.c-content div.dem-top-ten-header figure {
+        grid-area: pic;
+    }
+    
+    section.c-content div.meet-family figure img,
+    section.c-content div.dem-top-ten-header figure img {
+        min-width: 200px;
+        max-width: 450px;
+        margin: 0;
+        width: clamp(100px, 3vw, 450px);
+    }
+    
+    section.c-content div.meet-family section
+    /*,section.c-content div.dem-top-10 section*/ {
+        grid-area: text;
+        display: flex;
+        flex-flow: column wrap;
+        grid-gap: 1em;
+    }
+    
+    /*section.c-content div.dem-top-10 section {
+        grid-gap: 0;
+    }*/
+    
+    section.c-content div.meet-family p
+    /*,section.c-content div.dem-top-10 p*/ {
+        color: white;
+    	font-family: 'Istok Web', serif;
+    	font-size: clamp(24px, 3vw, 34px);
+    	line-height: clamp(28px, 1.4em, 50px);
+    }
+    
+    /*section.c-content div.dem-top-10 p.header {
+    	font-size: clamp(34px, 3vw, 54px);
+    	line-height: clamp(40px, 1.4em, 60px);
+        font-weight: bold;
+        margin-top: clamp(1em, 1vh, 2.5em);
+    }*/
+    
+    /*section.c-content div.dem-top-10 p.subheader {
+        color: hsl(214, 40%, 28%);
+    	font-size: clamp(24px, 2vw, 30px);
+    	line-height: clamp(28px, 1.4em, 36px);
+        margin-top: 0;
+    }*/
+    
+    div.intro p {
+        font-family: Inter, sans-serif;
+    }
+    
+    section.c-content div.meet-family p.citation span {
+        font-size: 90%;
+        font-style: italic;
+    }
+    
+    section.c-content div.meet-family p.citation::before {
+    	content: "\2014";
+    }
+    
+    section.c-content div.meet-family a
+    /*,section.c-content div.dem-top-10 a*/ {
+    	min-width: 30%;
+        max-width: 75%;
+    	padding: 0.5em;
+    	color: white;
+    	background: #00aac9;
+        text-align: center;
+        text-decoration: none;
+        align-self: flex-end;
+        font-style: italic;
+    }
+    
+    /*section.c-content div.dem-top-10 a {
+    	background: hsl(214, 40%, 28%);
+        margin-top: 1em;
+    }*/
+ 
+    @media (max-width: 706px) {
+        section.c-content div.meet-family,
+    	section.c-content div.dem-top-ten-header {
+            grid-template-areas: "pic"
+                                 "text";
+            flex-wrap:wrap;
+            justify-content: center;
+  		}
+        section.c-content p.header,
+        section.c-content p.quote {
+        	margin-top: 1em;
+            text-align: center;
+        }
+        section.c-content p.citation,
+        section.c-content p.subheader {
+        	text-align:center;
+        }
+        section.c-content p.subheader {
+            margin: 1em;
+        }
+        section.c-content div.welcome-module p.header {
+        	margin-top: 0;
+        }
+        section.c-content div.meet-family figure img,
+    	section.c-content div.dem-top-ten-header figure img {
+        	margin: 0 auto;
+    	}
+        section.c-content div.meet-family a,
+        section.c-content div.dem-top-ten-header a {
+        	align-self: center;
+        }
+	}
+
+    /*
+img.c-home__image {
+  width: 100%;
+  min-width: 300px;
+  max-width: 400px;
+  height: auto;
+  aspect-ratio: 1/1;
+  margin: 0 auto;
+}
+
+.home-template section.c-content p {
+  font-size: min(max(24px, 2vw), 28px);
+  line-height: 1.5em;
+}
+
+@media (max-width: 1023px) {
+  .home-template div.c-home__content {
+    padding: 32px;
+  }
+}
+    */
+
+/**************************/
+/* ABOUT PAGE             */
+/**************************/
+
+/* Images */
+figure.about-image,
+figure.about-image > * {
+  margin: 0;
+  min-width: auto; /* previously set to 100% */
+    max-width: 100%;
+  padding: 0;
+  height: auto;
+  
+}
+
+figure.about-image figcaption {
+  	max-width: 90%;
+  	text-align: center;
+  	margin: 0 auto;
+    line-height: 1.2em;
+    margin-top: 16px;
+    font-size: 12px;
+}
+
+figure.about-image--med figcaption {
+  max-width: 200px;
+}
+
+figure.about-image--small figcaption {
+  max-width: 100px;
+}
+.floatleft {
+  float: left;
+}
+figure.floatleft,
+figure.floatleft img {
+  padding-top: 8px;
+  padding-right: 8px;
+}
+
+.floatright {
+  float: right;
+}
+figure.floatright,
+figure.floatright img {
+  padding-top: 8px;
+  padding-left: 8px;
+}
+.clear {
+  clear: both;
+}
+
+figure.about-image figcaption {
+  font-style: italic;
+  font-size: 12px;
+}
+    
+    @media(max-width:500px){
+        figure.about-image {
+            float: none;
+            margin: auto;
+        }
+    }
+
+/***********************/
+/* DEMOCRACY'S TOP TEN */
+/***********************/
+    
+    .page-democracys-top-ten section.c-content {
+    	margin-top: 0;
+    }
+    
+    .page-democracys-top-ten header.c-post-header {
+    	display: none;
+    }
+    
+    .page-democracys-top-ten .c-content p {
+        font-size: min(max(18px, 2vw), 22px);
+    	line-height: 1.2em;
+    	margin: 0.4em 0;   
+    }
+
+.page-democracys-top-ten article.page h2 {
+  border-bottom: none;
+}
+
+.page-democracys-top-ten section.c-content {
+  counter-reset: li;
+}
+
+.page-democracys-top-ten ol.top-ten {
+  list-style: none;
+    margin-left: 0;
+}
+
+.page-democracys-top-ten li.top-ten-item {
+  display: flex;
+  margin: 4em 0;
+}
+
+.page-democracys-top-ten li.top-ten-item::before {
+  color: #223959;
+  counter-increment: li;
+  content: counter(li);
+  font-size: min(max(100px, 5vw), 130px);
+  font-weight: 900;
+  min-width: fit-content;
+  padding: 30px;
+  padding-left: min(max(5px, 1.5vw), 30px);
+  padding-top: 34px;
+}
+
+.page-democracys-top-ten .kg-header-card.kg-style-image::before {
+  background: linear-gradient(
+    180deg,
+    rgba(209, 35, 42, 0),
+    rgba(209, 35, 42, 0.5)
+  );
+}
+
+.page-democracys-top-ten .kg-header-card.kg-style-image h2,
+.page-democracys-top-ten .kg-header-card.kg-style-image h3 {
+  text-shadow: 1px 1px 2px rgba(209, 35, 42, 0.7);
+}
+    
+.page-democracys-top-ten p.read-more {
+  margin-top: 1rem;
+}
+    
+.tag-hash-dempolicy #benefits+ul li {
+    font-family: Garamond, Georgia, serif;
+    font-size: 20px;
+    }
+    
+article.tag-hash-dempolicy figcaption::before {
+        content: "\25A0";
+        background-color: #043b94;
+        color: #043b94;
+        margin-right: 10px;
+    }
+    
+    
+</style>
