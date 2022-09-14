@@ -1,0 +1,48 @@
+routes:
+  /voting-rights-restoration/:
+    template: page-demten-item
+    data: page.voting-rights-restoration
+  /non-partisan-election-administration/:
+    template: page-demten-item
+    data: page.non-partisan-election-administration
+  /mail-ballots-and-early-voting-in-person/:
+    template: page-demten-item
+    data: page.mail-ballots-and-early-voting-in-person
+  /automatic-voter-registration/:
+    template: page-demten-item
+    data: page.automatic-voter-registration
+  /same-day-registration/:
+    template: page-demten-item
+    data: page.same-day-registration
+  /democracys-top-ten/:
+    template: page-demten
+    data: page.democracys-top-ten
+  /organizations/:
+    template: page-about
+    data: page.organizations
+  /about/:
+    template: page-about
+    data: page.about-mr-pillsbury
+  /membership/: members/membership
+  /signup/: members/signup
+  /signin/: members/signin
+  /account/: members/account
+  /:
+    template: home
+    data: page.home
+
+  /archive/:
+    template: archive
+
+collections:
+  # /updates/:
+  #   permalink: /{slug}/
+  #   filter: tag:updates
+  #   template: tag
+  /blog/:
+    permalink: /{slug}/
+    template: index
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/

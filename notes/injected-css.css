@@ -7,19 +7,30 @@
   /* custom hero background color */
   --background-hero: #fbfbfb;
 }
+    
+    .c-content p a, .c-content li a {
+        color: blue !important;
+    }
 
 img {
   width: 100%;
   height: auto;
 }
-    
+    .c-content h3 {
+    	font-size: clamp(22px, 2vw, 28px);
+        line-height: 1.2em;
+    }
     .c-content h4 {
-        font-size: 20px;
-        line-height: 24px;
+        font-size: clamp(20px, 1.9vw, 26px);
+        line-height: 1.2em;
     }
     
 .padding-1em {
     padding: 1em !important;
+    }
+    
+.non-serif, .non-serif * {
+    font-family: var(--type-sans-serif) !important;
     }
 
 /**************************/
@@ -484,6 +495,11 @@ section.c-content div.welcome-module p {
         margin-top: 0;
     }*/
     
+    div.intro p {
+        font-family: var(--type-sans-serif);
+        font-size: clamp(20px, 1.9vw, 24px);
+    }
+    
     section.c-content div.meet-family p.citation span {
         font-size: 90%;
         font-style: italic;
@@ -587,6 +603,7 @@ figure.about-image figcaption {
   	margin: 0 auto;
     line-height: 1.2em;
     margin-top: 16px;
+    font-size: 12px;
 }
 
 figure.about-image--med figcaption {
@@ -619,7 +636,7 @@ figure.floatright img {
 
 figure.about-image figcaption {
   font-style: italic;
-  font-size: 80%;
+  font-size: 12px;
 }
     
     @media(max-width:500px){
@@ -693,9 +710,20 @@ figure.about-image figcaption {
 .page-democracys-top-ten p.read-more {
   margin-top: 1rem;
 }
-   
+    
 .tag-hash-dempolicy #benefits+ul li {
     font-family: Garamond, Georgia, serif;
     font-size: 20px;
+    }
+    
+article.tag-hash-dempolicy figcaption::before {
+        content: "\25A0";
+        background-color: #043b94;
+        color: #043b94;
+        margin-right: 10px;
+    }
+    
+    .prin-criteria h4 {
+        font-size: clamp(18px, 1.7vw, 22px);
     }
     
