@@ -47,21 +47,24 @@
 </style>
 <header class='dem-top-ten-header-short'>
     <div class="dem-top-ten-header">
-    <figure>
-        <img
-        alt="Ballot Mark"
-        src="../../assets/img/pillsbury-website-topten-html.gif"
-        height="100"
-        width="100"
-        />
-    </figure>
-    <section>
-        <p class="header">Democracy's Top Ten</p>
-    </section>
+        <figure>
+            <img
+            alt="Ballot Mark"
+            src="../../assets/img/pillsbury-website-topten-html.gif"
+            height="100"
+            width="100"
+            />
+        </figure>
+        <section>
+            <p class="header">Democracy's Top Ten</p>
+        </section>
     </div>
+
     <div class="c-post-header">
 
-    <h1 class='c-post-header__title' style="visibility:hidden; height: 0;">{{ title }}</h1>
+    {{!-- JJ 9-15-22 Remove the part that hides the title 
+    style="visibility:hidden; height: 0;" --}}
+    <h1 class='c-post-header__title' >{{ title }}</h1>
 
     {{#if custom_excerpt}}
         <p class='c-post-header__excerpt' style="visibility:hidden; height: 0;">{{ custom_excerpt }}</p>
