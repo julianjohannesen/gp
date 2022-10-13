@@ -1,4 +1,19 @@
 routes:
+  /non-partisan-redistricting/:
+    template: page-demten-item
+    data: page.non-partisan-redistricting
+  /ranked-choice-voting/:
+    template: page-demten-item
+    data: page.ranked-choice-voting
+  /campaign-finance-reform/:
+    template: page-demten-item
+    data: page.campaign-finance-reform
+  /open-primaries-and-reform/:
+    template: page-demten-item
+    data: page.open-primaries-and-reform
+  /replace-or-modify-the-electoral-college/:
+    template: page-demten-item
+    data: page.replace-or-modify-the-electoral-college
   /voting-rights-restoration/:
     template: page-demten-item
     data: page.voting-rights-restoration
